@@ -1,0 +1,242 @@
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal;
+    text-decoration: none;
+    border: none;
+    //color: #333;
+    box-sizing: border-box;
+    font-family: "Microsoft Yahei",sans-serif;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-font-smoothing: antialiased;
+    height: auto;
+    &:focus {
+        outline: none;
+    }
+}
+#app{
+  height:100%;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar:vertical
+{
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar
+{
+    width: 0px;
+    height: 0px;
+    background-color: rgba(0,0,0,0);
+  //#F5F5F5
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0);
+  //#F5F5F5
+}
+::-webkit-scrollbar-track:hover
+{
+  -webkit-box-shadow: inset 0 0 1px rgba(239,239,239,239);
+  border-radius: 10px;
+  background-color: rgba(239,239,239,239);
+  //#F5F5F5
+}
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: rgba(0,0,0,0.1);
+  //#555
+
+}
+
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+textarea { -webkit-appearance: none;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #F5F5F5;
+}
+
+//右边大框架
+.mainc {
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+}
+
+//搜索框
+.search{
+  height:8%;
+  width: 100%;
+}
+
+//搜索框下的主页面
+.content{
+  height:92%;
+  width: 100%;
+  overflow: scroll;
+}
+
+.table_name {
+  float: left;
+  line-height: 30px;
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.table_top {
+  text-align: right;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  background: white;
+  padding-top: 10px;
+}
+
+//类似数据录入页面的统一样式；右边框架分为：左菜单、右内容结构
+.liStyle {
+  border-right: #20a0ff 3px solid;
+}
+
+//右内容
+.right_content {
+  width: 84%;
+  margin-left: 1%;
+  height: 100%;
+  font-size: 14px;
+  float: right;
+}
+
+//左菜单
+.left_menu {
+  width: 15%;
+  height: 100%;
+  font-size: 14px;
+  float: left;
+  ul {
+    height: 100%;
+    background-color: white;
+    li {
+      padding: 10px;
+      border-bottom: #ddd 1px solid;
+      cursor: pointer;
+      /*&:active{*/
+      /*@extend .liStyle;*/
+      /*}*/
+    }
+  }
+}
+
+//主页面table 分页的样式
+.mainPage{
+  width: 100%;
+  text-align: right;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clear{
+    zoom:1;
+}
+
+.back_img{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.margin{
+    margin: 0 auto;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.paddingTop{
+    padding-top: 1.95rem;
+}
+
+//所有被禁用样式
+.el-input.is-disabled .el-input__inner,.el-textarea.is-disabled .el-textarea__inner{
+  background-color:white;
+  color:#000000;
+}
+@media (max-width : 1366px){
+  .table_height{
+    height:420px !important;
+  }
+  .table_height1{
+    height:470px !important;
+  }
+}
+
+//1024*768
+@media (max-width: 1024px){
+  div.logo div.el-select,.el-date-editor.el-input{
+    width: 140px;
+  }
+  div.p_kuai div.p_kuai1{
+    width: 23%;
+    padding-right: 3%;
+  }
+  div.p_kuai2{
+    max-width:55%!important;
+  }
+  .table_height{
+    height:420px !important;
+  }
+  .table_height1{
+    height:470px !important;
+  }
+  .sjsb_input{
+    margin: 1%!important;
+  }
+  .sjsb_input div.el-input{
+    width: 175px;
+    margin: 2%;
+  }
+
+  .yjzbMs{
+    width: 10%!important;
+  }
+
+  .yjzbGs{
+    width: 15%!important;
+  }
+}

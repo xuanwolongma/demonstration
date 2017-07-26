@@ -1,0 +1,62 @@
+// 背景图片地址和大小
+@mixin bis($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.el-dialog__header{
+  //padding: 10px 20px 0!important;
+  padding-top: 10px !important;;
+  padding-bottom: 20px!important;
+  padding-left:20px;
+}
+//.el-menu--dark .el-submenu__title:hover {
+//  background-color: #f00 !important;
+//}
+.el-select {
+  margin-left: 0px!important;
+}
+.el-card{
+  margin-top:3%;
+}
+////弹框样式 size=large
+.el-dialog--small {
+  width: 83%;
+  left: 57.5%;
+}
+.el-dialog--smallA {
+  width: 55%;
+  left: 57.5%;
+}
+.el-dialog__body {
+  padding: 10px 20px !important;
+  color: #48576a;
+  font-size: 14px;
+}
+$menuHT : 45px;
+.el-menu--horizontal .el-menu-item{
+  height: $menuHT;
+  line-height: $menuHT;
+  border-bottom: 0px solid transparent;
+  padding: 0 15px;
+}
+.el-menu--horizontal .el-submenu .el-submenu__title{
+  height: $menuHT;
+  line-height: $menuHT;
+  border-bottom: 0px solid transparent;
+}
+.el-menu--horizontal .el-submenu>.el-menu{
+  top:$menuHT+5;
+}
+.el-submenu .el-menu-item{
+  min-width: 130px;
+}
+.el-menu--horizontal>.el-menu-item:hover,
+.el-menu--horizontal>.el-submenu.is-active .el-submenu__title,
+.el-menu--horizontal>.el-submenu:hover .el-submenu__title{
+  border-bottom: 0px solid #20a0ff!important;
+}
+
+
+
+
