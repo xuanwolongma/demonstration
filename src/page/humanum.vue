@@ -105,7 +105,7 @@ export default {
       activeName:"first",
       tableData6: [{
         id: '1',
-        name: '王小虎',
+        name: '王虎',
         amount1: '234',
         amount2: '3.2',
         amount3: 10
