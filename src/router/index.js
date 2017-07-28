@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import humanum from '../page/humanum'
 import cost from '../page/cost'
+import annualindicator from '../page/annualindicator'
+import backmoney from '../page/backmoney'
 import mainContainer from '../page/mainContainer'
 import header from '../components/headerDiv.vue'
 
@@ -23,6 +25,13 @@ export default new Router({
           path:"/cost",
           component:cost
         },
+        {
+          path:"/annualindicator",
+          component:annualindicator
+        },{
+          path:"/backmoney",
+          component:backmoney
+        }
       ]
     },
   ]
