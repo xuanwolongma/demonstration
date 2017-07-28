@@ -33,5 +33,9 @@ export default {
  .header{
    width: 100%;
    overflow: scroll;
+   position: fixed;
+   top: 0;
+   z-index: 99;
+   border-bottom: #198bfe 1px solid;
  }
 </style>
