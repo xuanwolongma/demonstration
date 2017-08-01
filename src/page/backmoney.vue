@@ -69,13 +69,14 @@
 
 <script>
 import modelselect  from  "../components/modelselect.vue"
-//import echarts from "echarts"
+import echarts from "echarts"
 export default{
   components:{
     modelselect
   },
   data(){
     return {
+      dnxzqk:436,
       dtts:'2017-07-27 02:20',
       backMoneyDetail:{
         dnqyzjgkvalue:'3018亿',
@@ -91,6 +92,105 @@ export default{
       }
     }
   },
+  activated(){
+    let myEchart = echarts.init(document.getElementById('main1'))
+    // 指定图表的配置项和数据
+    var option1 = {
+      title : {
+        text: this.dnxzqk+'万元',//需替换数据
+        textStyle:{
+          color:'red'
+        }
+      },
+      tooltip : {
+        trigger: 'item'
+      },
+      xAxis : [
+        {
+          type : 'category',
+          data : ["欠款3个月内","欠款3个月-6个月","欠款6个月-9个月","欠款9个月-12个月"],//需替换
+          axisLabel:{
+            interval: 0,
+            textStyle : {
+              fontSize : '16',
+              color: 'whitesmoke'
+            },
+            rotate:0
+          },
+          axisLine :{
+            lineStyle:{
+              color:'white'
+            }
+          }
+        }
+      ],
+      yAxis : [
+        {
+          type : 'value',
+          show : false
+        }
+      ],
+      grid:{
+        x:10,
+        y:50,
+        x2:10,
+        y2:70
+      },
+      series : [
+        {
+          name:'',
+          type:'bar',
+          data:[312,56,36,33],//需替换
+          itemStyle:{
+            normal:{
+              color:'#60cafc',
+              label : {show: true, position: 'top', textStyle: {
+                fontSize: 15
+              }}
+            }
+          }
+        }
+
+      ],
+      backgroundColor:['#01304a']
+    };
+    option1 = this.newline(option1,5,"xAxis");
+    myEchart.setOption(option1)
+  },
+  methods:{
+    newline : function (option, number, axis){
+      option[axis][0]['axisLabel']={
+        interval: 0,
+        textStyle : {
+          fontSize : '15',
+          color    : '#666'
+        },
+        formatter: function(params){
+          var newParamsName = "";
+          var paramsNameNumber = params.length;
+          var provideNumber = number;
+          var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+          if (paramsNameNumber > provideNumber) {
+            for (var p = 0; p < rowNumber; p++) {
+              var tempStr = "";
+              var start = p * provideNumber;
+              var end = start + provideNumber;
+              if (p == rowNumber - 1) {
+                tempStr = params.substring(start, paramsNameNumber);
+              } else {
+                tempStr = params.substring(start, end) + "\n";
+              }
+              newParamsName += tempStr;
+            }
+          } else {
+            newParamsName = params;
+          }
+          return newParamsName;
+        }
+      };
+      return option;
+    }
+  }
 }
 </script>
 
@@ -153,7 +253,7 @@ export default{
       font-size: 12px;
       float: left;
       text-indent: 0.5em;
-      color: #666;
+      color: whitesmoke;
       margin-top: 8px;
       margin-left: 10px;
     }
@@ -179,6 +279,16 @@ export default{
       font-size: 16px;
       color: white;
       margin-left: 1%;
+    }
+    #myTabContent {
+      background-color: #01304a;
+    }
+    .backmoneyT .tab-pane {
+      padding: 0 15px;
+    }
+    .echarts1 {
+      width: 340px;
+      height: 195px;
     }
   }
 </style>
