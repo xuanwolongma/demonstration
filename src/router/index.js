@@ -7,12 +7,12 @@ import cost from '../page/cost'  //成本中心 关键指标
 import Cdcapital from '../page/Cdcapital'  //财资中心 关键指标
 import crashReports from '../page/crashReports'  //财资中心 资金日报
 import situation from '../page/situation'  //财资中心 现金流状况
-import annualindicator from '../page/annualindicator'
-import backmoney from '../page/backmoney'
-import keyIndicators from '../page/keyIndicators'
-import  receivable from "../page/receivable"
-import  project from "../page/project"
-import  sales from "../page/sales"
+import annualindicator from '../page/annualindicator' //区域桌面 关键指标
+import  sales from "../page/sales" //区域桌面 销售情况
+import backmoney from '../page/backmoney' //区域桌面 回款情况
+import keyIndicators from '../page/keyIndicators'  //项目桌面 关键指标
+import  receivable from "../page/payment.vue"//项目桌面 回款情况
+import  project from "../page/project"//项目桌面 营销日报
 import mainContainer from '../page/mainContainer'
 import header from '../components/headerDiv.vue'
 

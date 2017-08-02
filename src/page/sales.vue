@@ -66,13 +66,7 @@
 
                 </div>
               </div>
-              <div class="col-md8 col-sm-8 col-xs-8">
-                <div class="arrow-left" ng-show="showLeft()" ng-click="left()">
-                  <!--向左的三角-->
-                </div>
-                <div class="arrow-right" ng-show="showRight()"ng-click="right()">
-                  <!--向右的三角-->
-                </div>
+              <div class="col-md8 col-sm-8 col-xs-8" style="position: relative">
                 <div id="main" class="main"></div>
               </div>
           </el-tab-pane>
@@ -120,13 +114,7 @@
                 <span class="font07">单位:<span v-html='dw1'></span>元</span>
               </div>
             </div>
-            <div class="col-md8 col-sm-8 col-xs-8">
-              <div class="arrow-left" ng-show="showLeft()" ng-click="left()">
-                <!--向左的三角-->
-              </div>
-              <div class="arrow-right" ng-show="showRight()"ng-click="right()">
-                <!--向右的三角-->
-              </div>
+            <div class="col-md8 col-sm-8 col-xs-8" style="position: relative">
               <div id="mainM" class="main"></div>
             </div>
           </el-tab-pane>
@@ -183,12 +171,6 @@
             </div>
           </div>
             <div class="col-md8 col-sm-8 col-xs-8">
-              <div class="arrow-left" ng-show="showLeft()" ng-click="left()">
-                <!--向左的三角-->
-              </div>
-              <div class="arrow-right" ng-show="showRight()"ng-click="right()">
-                <!--向右的三角-->
-              </div>
               <div id="mainD" class="main"></div>
             </div>
           </el-tab-pane>
@@ -206,6 +188,8 @@
         },
         data(){
             return {
+              showLeft:true,
+              showRight:true,
               qjt:true,
               activeName2: 'first',
               month:7,
@@ -217,109 +201,159 @@
                 par11:3356.70,par51:174,par31:1924.58,par52:12,par49:108,par12:335542,par28:108.92,par26:115.03,
                 par50:6421.10,par9:337,par1:103,par29:328,par5:12,par17:402,par10:35109,par19:27,
                 par8:2329,par7:221834,par14:6106,par13:479571,par16:696,par15:65144,
-              }
+              },
+              syhz:[4.33,0.61,3.72],
+              qyhz:[7.21,2.96,4.25],
+              qhl:[62.49,82.89,53.34],
+              syhz1:[2.33,4.61,1.72],
+              qyhz1:[1.21,7.96,4.25],
+              qhl2:[67.49,42.89,76.34],
+              syhz2:[6.33,5.61,2.72],
+              qyhz2:[5.21,6.96,4.25],
+              qhl2:[89.49,70.89,53.34],
             }
         },
         activated(){
-        let myEchart = echarts.init(document.getElementById('main'))
-        // 指定图表的配置项和数据
-        var option1 = {
-          title : {
-            text: this.dnxzqk+'万元',//需替换数据
-            textStyle:{
-              color:'red'
-            }
-          },
-          tooltip : {
-            trigger: 'item'
-          },
-          xAxis : [
-            {
-              type : 'category',
-              data : ["欠款3个月内","欠款3个月-6个月","欠款6个月-9个月","欠款9个月-12个月"],//需替换
-              axisLabel:{
-                interval: 0,
-                textStyle : {
-                  fontSize : '16',
-                  color: 'whitesmoke'
-                },
-                rotate:0
-              },
-              axisLine :{
-                lineStyle:{
-                  color:'white'
-                }
-              }
-            }
-          ],
-          yAxis : [
-            {
-              type : 'value',
-              show : false
-            }
-          ],
-          grid:{
-            x:10,
-            y:50,
-            x2:10,
-            y2:70
-          },
-          series : [
-            {
-              name:'',
-              type:'bar',
-              data:[312,56,36,33],//需替换
-              itemStyle:{
-                normal:{
-                  color:'#60cafc',
-                  label : {show: true, position: 'top', textStyle: {
-                    fontSize: 15
-                  }}
-                }
-              }
-            }
-
-          ],
-          backgroundColor:['#01304a']
-        };
-        option1 = this.newline(option1,5,"xAxis");
-        myEchart.setOption(option1)
+            this.echart('main',this.syhz,this.qyhz,this.qhl)
+          this.echart('mainM',this.syhz1,this.qyhz1,this.qhl1)
+          this.echart('mainD',this.syhz2,this.qyhz2,this.qhl2)
       },
         methods: {
           handleClick(tab, event) {
-            console.log(tab, event);
           },
-          newline : function (option, number, axis){
-            option[axis][0]['axisLabel']={
-              interval: 0,
-              textStyle : {
-                fontSize : '15',
-                color    : '#666'
-              },
-              formatter: function(params){
-                var newParamsName = "";
-                var paramsNameNumber = params.length;
-                var provideNumber = number;
-                var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
-                if (paramsNameNumber > provideNumber) {
-                  for (var p = 0; p < rowNumber; p++) {
-                    var tempStr = "";
-                    var start = p * provideNumber;
-                    var end = start + provideNumber;
-                    if (p == rowNumber - 1) {
-                      tempStr = params.substring(start, paramsNameNumber);
-                    } else {
-                      tempStr = params.substring(start, end) + "\n";
+          echart(a,b,c,d){
+            let myEchart = echarts.init(document.getElementById(a))
+            // 指定图表的配置项和数据
+            var	option = {
+              tooltip : {
+                trigger: 'axis',
+                formatter: function (params) {
+                  var temp='';
+                  for(var i = 0;i<params.length;i++){
+                    if(i == params.length-1){
+                      temp += params[i].seriesName+':'+params[i].data+'%<br/>';
+                    }else {
+                      temp += params[i].seriesName+':'+params[i].data+'亿<br/>';
                     }
-                    newParamsName += tempStr;
+
                   }
-                } else {
-                  newParamsName = params;
+                  return temp
                 }
-                return newParamsName;
-              }
+              },
+              legend: {
+                textStyle: {
+                  color: '#000',
+                },
+
+                data:['剩余货值','签约货值','去化率']
+              },
+              grid: {
+                top:'20%',
+                left: '3%',
+                right: '5%',
+                bottom: '30%',
+              },
+              xAxis : [
+                {
+                  type : 'category',
+                  splitLine:{
+                    show: true,
+                    lineStyle:{
+                      color:'white'
+                    }
+                  },
+                  axisLabel:{
+                    interval:0,
+                    textStyle:{
+                      color:'white'
+                    }
+                  },
+                  data : ['整体货值','上年积存\n积存目标:100亿元','本年新货\n新货目标：70%']
+                }
+              ],
+              yAxis : [
+                {
+                  type : 'value',
+                  axisTick: {
+                    show: false,
+                  },
+                  axisLabel: {
+                    show: false
+                  },
+                  axisLine: {
+                    show: false
+                  },
+                  splitLine:{
+                    show: false,
+                  },
+                },
+                {
+                  type : 'value',
+
+                  axisLabel : {
+                    show: false,
+                  },
+                  axisTick: {
+                    show: false,
+                  },
+
+                  axisLine: {
+                    show: false
+                  },
+                  splitLine:{
+                    show: false,
+                  },
+                }
+              ],
+              series : [
+
+                {
+                  name:'剩余货值',
+                  type:'bar',
+                  itemStyle: {
+                    normal: {
+                      color: '#6AC3EF',
+                    },
+                  },
+                  barWidth: 50,
+                  stack: '广告',
+                  data:b
+                },
+                {
+                  name:'签约货值',
+                  type:'bar',
+                  itemStyle: {
+                    normal: {
+                      color: '#FE5A35',
+                    },
+                  },
+
+                  barWidth: 50,
+                  stack: '广告',
+                  data:c
+                },
+                {
+                  name:'去化率',
+                  type:'line',
+                  yAxisIndex: 1,
+                  itemStyle: {
+                    normal: {
+                      color: '#31B377'
+                    },
+                  },
+                  label:{
+                    normal:{
+                      show: true,
+                      formatter: '{c}%'
+                    },
+                  },
+                  barWidth: 50,
+                  symbolSize: 2|10,
+                  data:d
+                }
+              ]
             };
-            return option;
+            myEchart.setOption(option)
           }
         }
     }
@@ -460,9 +494,30 @@
     img {
       vertical-align: middle;
     }
+    .arrow-left {
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid #009ae4;
+      position: absolute;
+      top: 108px;
+      left: 2%;
+    }
+    .arrow-right {
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #009ae4;
+      position: absolute;
+      top: 108px;
+      right: 2%;
+    }
     .main {
-      width: 100%;
+      width: 330px;
       height: 200px;
+      margin-left: 20px;
     }
   }
 </style>
