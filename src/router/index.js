@@ -16,6 +16,7 @@ import  project from "../page/project"//项目桌面 营销日报
 import mainContainer from '../page/mainContainer'
 import percapeffica from '../page/PerCapitaEfficacy'
 import adviceSubmit from '../page/adviceSubmit'
+import designDetail from '../page/designDetail'
 import header from '../components/headerDiv.vue'
 
 Vue.use(Router)
@@ -87,6 +88,10 @@ export default new Router({
         {
           path:"sales",
           component:sales
+        },
+        {
+          path:"/design",
+          component:designDetail
         }
       ]
     },
