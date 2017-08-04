@@ -25,7 +25,7 @@ export default {
       activeIndex:"1"
     }
   },
-  method:{
+  methods:{
     handleSelect (){
        console.log("select");
     }

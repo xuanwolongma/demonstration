@@ -136,7 +136,7 @@ export default {
       }]
     }
   },
-  method:{
+  methods:{
     handleClick(){
       console.log("click");
     }
