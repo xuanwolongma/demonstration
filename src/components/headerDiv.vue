@@ -9,6 +9,7 @@
         <!--<el-menu-item index="2-2">成本中心</el-menu-item>-->
         <!--<el-menu-item index="2-3">财资中心</el-menu-item>-->
       <!--</el-submenu>-->
+
       <el-menu-item index="3">成本中心</el-menu-item>
       <el-menu-item index="4">财资中心</el-menu-item>
       <el-menu-item index="5">人力中心</el-menu-item>
