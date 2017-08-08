@@ -439,7 +439,7 @@
       height: 40px;
       line-height: 40px;
       font-size: 16px;
-      background-image: url("../assets/common-bluebox@3x.png");
+      background-image: url("../assets/common-bluebox_b.png");
       background-repeat: no-repeat;
       background-size: 100% 100%;
       margin-top: 5px;

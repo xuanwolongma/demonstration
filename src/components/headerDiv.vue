@@ -27,8 +27,9 @@ export default {
     }
   },
   methods:{
-    handleSelect (){
+    handleSelect (key){
        console.log("select");
+       this.$emit("changeHead",key);
     }
   }
 }

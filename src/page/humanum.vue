@@ -90,7 +90,7 @@
             <div class="textStyle">注:房产基层人员428人,含总部后勤及装修监控部分234人,编制在区域的会所,酒店筹建,绿化等159人</div>
           </el-tab-pane>
           <el-tab-pane label="文本模式" name="second">
-            <div style="text-align: left;">
+            <div style="text-align: left;font-size: 14px;">
               <div>截至2017年07月28日，集团人数如下：</div>
               <div>一、总部及区域共26397人，较上月增3036人，其中：</div>
               <div>1、集团总部2586人（不含后勤、装修监控等260人），较上月增长310人。</div>

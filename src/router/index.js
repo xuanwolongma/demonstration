@@ -88,10 +88,6 @@ export default new Router({
         {
           path:"sales",
           component:sales
-        },
-        {
-          path:"/design",
-          component:designDetail
         }
       ]
     },

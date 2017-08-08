@@ -1,18 +1,18 @@
 <template>
   <div id="footer">
     <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1">
+      <el-menu-item v-for="(item,index) in menudata" index="index" key="index">
         <i class="el-icon-share"></i>
-        <span>人数</span>
+        <span>{{item.name}}</span>
       </el-menu-item>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span>人均效能</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <i class="el-icon-message"></i>
-        <span>意见反馈</span>
-      </el-menu-item>
+      <!--<el-menu-item index="2">-->
+        <!--<i class="el-icon-menu"></i>-->
+        <!--<span>人均效能</span>-->
+      <!--</el-menu-item>-->
+      <!--<el-menu-item index="3">-->
+        <!--<i class="el-icon-message"></i>-->
+        <!--<span>意见反馈</span>-->
+      <!--</el-menu-item>-->
     </el-menu>
   </div>
 </template>
@@ -22,12 +22,16 @@ export default {
   name: 'header',
   data(){
     return {
-      activeIndex:"1"
+      activeIndex:"1",
     }
   },
+  props:[
+    "menudata"
+  ],
   methods:{
-    handleSelect (){
-       console.log("select");
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
+      this.$emit("cgFooter","1");
     }
   }
 }
