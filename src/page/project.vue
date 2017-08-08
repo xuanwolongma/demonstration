@@ -376,6 +376,7 @@
     width: 100%;
     height: 100% !important;
     color: white;
+    margin-top: 45px;
     .headerXM {
       height: 45px;
       border-bottom: 1px solid #ccc;

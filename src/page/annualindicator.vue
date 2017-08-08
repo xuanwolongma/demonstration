@@ -285,6 +285,7 @@ import modelselect  from  "../components/modelselect.vue"
     width: 100%;
     height: 100% !important;
     color:white;
+    margin-top: 45px;
     .maintop {
       margin-bottom: 10px;
     }

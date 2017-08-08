@@ -244,6 +244,7 @@ export default {
     width: 100%;
     height: 100%;
     color: white;
+    margin-top: 45px;
     font-size: 14px;
     .top_title {
       height: 50px;
