@@ -4,6 +4,7 @@
       <span class="title">集团人力日报</span>
       <span class="time">2017-07-25</span>
     </div>
+
     <div class="numberSum">
        <div class="taglabe">人员概况</div>
        <div style="text-align: center;height: 45px;line-height: 45px;">

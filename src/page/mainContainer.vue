@@ -26,6 +26,7 @@ export default {
     return{
       menudata :[{id:"1",name:"人数"},{id:"2",name:"人均效能"},{id:"3",name:"意见反馈"}]
     }
+
   },
   methods:{
     changeFooter(state){

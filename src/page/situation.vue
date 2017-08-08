@@ -443,6 +443,7 @@
       background-repeat: no-repeat;
       background-size: 100% 100%;
       margin-top: 5px;
+
     }
      .jycash span:nth-child(1){
       float: left;
