@@ -50,6 +50,32 @@
       </el-row>
     </div>
     <div class="fenge">数据截止日期，2017-07-25</div>
+    <div class="cards">
+      <el-row  class="cards_item">
+        <el-col :span="14" class="cards_title">审批超付金额</el-col>
+        <el-col :span="10"class="cards_title_1">15.00 <span style="font-size: 16px">亿元</span></el-col>
+      </el-row>
+      <el-row class="cards_item_1">
+        <el-col :span="10" style="text-align: center">
+          <div class="color1 font2">8.6</div>
+          <div>实付超付金额</div>
+        </el-col>
+      </el-row>
+    </div>
+    <div class="fenge">数据截止日期，2017-07-25</div>
+    <div class="cards">
+      <el-row  class="cards_item">
+        <el-col :span="14" class="cards_title">审批超付金额</el-col>
+        <el-col :span="10"class="cards_title_1">15.00 <span style="font-size: 16px">亿元</span></el-col>
+      </el-row>
+      <el-row class="cards_item_1">
+        <el-col :span="10" style="text-align: center">
+          <div class="color1 font2">8.6</div>
+          <div>实付超付金额</div>
+        </el-col>
+      </el-row>
+    </div>
+    <div class="fenge">数据截止日期，2017-07-25</div>
   </div>
 </template>
 
@@ -106,6 +132,7 @@
     border-top: #1d87ff solid 1px;
     width: 100%;
     height: 100%;
+    margin-top: 45px;
     color:white;
     .top_title{
       height: 50px;

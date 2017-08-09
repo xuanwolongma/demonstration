@@ -206,6 +206,7 @@
     border-top: #1d87ff solid 1px;
     width: 100%;
     height: 100% !important;
+    margin-top: 45px;
     color: white;
     .maintop {
       margin-bottom: 10px;

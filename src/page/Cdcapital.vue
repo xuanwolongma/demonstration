@@ -251,12 +251,14 @@
     width: 100%;
     height: 100%;
     color:white;
+    margin-top: 45px;
     padding-bottom: 75px;
   .top_title{
     height: 50px;
     line-height: 50px;
     text-align: left;
     color: #fff;
+
   }
 
      .main{
