@@ -1,7 +1,7 @@
 <template>
   <div id="footer">
     <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item v-for="(item,index) in menudata" index="index" key="index">
+      <el-menu-item v-for="(item,index) in menudata" :index="item.id" :key="index">
         <i class="el-icon-share"></i>
         <span>{{item.name}}</span>
       </el-menu-item>
@@ -32,7 +32,7 @@ export default {
   methods:{
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
-      this.$emit("cgFooter","1");
+      this.$emit("cgFooter",key);
     }
   }
 }

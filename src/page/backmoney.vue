@@ -92,7 +92,7 @@ export default{
       }
     }
   },
-  activated(){
+  mounted(){
     let myEchart = echarts.init(document.getElementById('main1'))
     // 指定图表的配置项和数据
     var option1 = {

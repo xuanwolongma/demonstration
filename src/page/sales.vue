@@ -207,13 +207,13 @@
               qhl:[62.49,82.89,53.34],
               syhz1:[2.33,4.61,1.72],
               qyhz1:[1.21,7.96,4.25],
-              qhl2:[67.49,42.89,76.34],
+              qhl1:[67.49,42.89,76.34],
               syhz2:[6.33,5.61,2.72],
               qyhz2:[5.21,6.96,4.25],
               qhl2:[89.49,70.89,53.34],
             }
         },
-        activated(){
+      mounted(){
             this.echart('main',this.syhz,this.qyhz,this.qhl)
           this.echart('mainM',this.syhz1,this.qyhz1,this.qhl1)
           this.echart('mainD',this.syhz2,this.qyhz2,this.qhl2)

@@ -27,7 +27,7 @@ export default new Router({
       path: '/',
       name: 'mainContainer',
       component: mainContainer,
-      redirect: '/humanum',
+      redirect: '/annualindicator',
       children:[
         {
           path:"/humanum",
