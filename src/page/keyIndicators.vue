@@ -2,7 +2,6 @@
     <div class="keyIndicators">
       <div class="titlezb">
         <div class="toptitlestyle">关键指标</div>
-        <modelselect></modelselect>
       </div>
       <div class="bgcolor">
         <!-- 合同销售额 -->
@@ -12,41 +11,56 @@
             <div class="kpztdiv02"><span class="font01">合同销售额</span></div>
             <div class="kpztdiv03">
               <span class="font02" v-html="htxse"></span>
-              <span class="font03">万元</span>
+              <span class="font03">万</span>
             </div>
-            <div style="width:10%;float:left;height:45px;">
-              <img alt="" src="../assets/in_01.png" class="a01">
-            </div>
+            <img alt="" src="../assets/in_01.png" class="a01">
           </div>
           <div class="line"></div>
           <div class="kpztdiv04">
-            <div class="kpztdiv07"><span class="font04" v-html="bnmb"></span></div>
-            <div class="kpztdiv08"><span class="font04" v-html="ewyj"></span></div>
-            <div class="kpztdiv07"><span class="font04" v-html="wcl"></span><span class="font04">%</span></div>
-            <div class="kpztdiv07"><span class="font05">本年目标</span></div>
-            <div class="kpztdiv08"><span class="font05">其他业绩</span></div>
-            <div class="kpztdiv07"><span class="font05">完成率</span></div>
+            <ul>
+              <li class="clearfix">
+                <div class="kpztdiv07"><span class="font05">本年目标</span></div>
+                <div class="kpztdiv08"><el-progress :percentage="100" text-inside="true"  show-text="false"></el-progress></div>
+                <div class="kpztdiv09"><span class="font04" v-html="bnmb"></span></div>
+              </li>
+              <li class="clearfix">
+                <div class="kpztdiv07"><span class="font05">其他业绩</span></div>
+                <div class="kpztdiv08"><el-progress :percentage="23" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv09"><span class="font04" v-html="ewyj"></span></div>
+              </li>
+              <li class="clearfix">
+                <div class="kpztdiv07"><span class="font05">完成率</span></div>
+                <div class="kpztdiv08"><el-progress :percentage="45" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv09"><span class="font04" v-html="wcl"></span><span class="font04">%</span></div>
+              </li>
+            </ul>
           </div>
         </div>
-        <!-- 回款金额 -->
+         <!--回款金额 -->
         <div class="kptop"></div>
         <div class='kpbg02'>
           <div class="kpztdiv01">
             <div class="kpztdiv02"><span class="font01">回款金额</span></div>
             <div class="kpztdiv03">
               <span class="font02" v-html="hkje"></span>
-              <span class="font03">万元</span>
+              <span class="font03">万</span>
             </div>
-            <div style="width:10%;float:left;height:45px;">
-              <img alt="" src="../assets/in_01.png" class="a01">
-            </div>
+            <img alt="" src="../assets/in_01.png" class="a01">
           </div>
           <div class="line"></div>
           <div class="kpztdiv04">
-            <div class="kpztdiv05"><span class="font04" v-html="cqqk"></span></div>
-            <div class="kpztdiv05"><span class="font04" v-html="wcqqk"></span></div>
-            <div class="kpztdiv06"><span class="font05">超期欠款</span></div>
-            <div class="kpztdiv06"><span class="font05">未超期欠款</span></div>
+            <ul>
+              <li class="clearfix">
+                <div class="kpztdiv07"><span class="font05">超期欠款</span></div>
+                <div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv09"><span class="font04" v-html="cqqk"></span></div>
+              </li>
+              <li class="clearfix">
+                <div class="kpztdiv07"><span class="font05">未超期欠款</span></div>
+                <div class="kpztdiv08"><el-progress :percentage="14" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv09"><span class="font04" v-html="wcqqk"></span></div>
+              </li>
+            </ul>
           </div>
         </div>
         <!-- 当前存货 -->
@@ -56,113 +70,129 @@
             <div class="kpztdiv02"><span class="font01">当前存货</span></div>
             <div class="kpztdiv03">
               <span class="font02" v-html="dqch"></span>
-              <span class="font03">万元</span>
+              <span class="font03">万</span>
             </div>
+            <img alt="" src="../assets/in_01.png" class="a01">
           </div>
           <div class="line"></div>
           <div class="kpztdiv04">
-            <div class="kpztdiv07"><span class="font04" v-html="yts"></span></div>
-            <div class="kpztdiv08"><span class="font04" v-html="ljqyje"></span></div>
-            <div class="kpztdiv07"><span class="font04" v-html="qhl"></span><span class="font04">%</span></div>
-            <div class="kpztdiv07"><span class="font05">累计已推售</span></div>
-            <div class="kpztdiv08"><span class="font05">累计签约</span></div>
-            <div class="kpztdiv07"><span class="font05">去化率</span></div>
+            <ul>
+              <li class="clearfix">
+                <div class="kpztdiv07"><span class="font05">累计已推售</span></div>
+                <div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv09"><span class="font04" v-html="ljqyje"></span></div>
+              </li>
+              <li class="clearfix">
+                <div class="kpztdiv07"><span class="font05">累计签约</span></div>
+                <div class="kpztdiv08"><el-progress :percentage="23" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv09"><span class="font04" v-html="ewyj"></span></div>
+              </li>
+              <li class="clearfix">
+                <div class="kpztdiv07"><span class="font05">去化率</span></div>
+                <div class="kpztdiv08"><el-progress :percentage="98" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv09"><span class="font04" v-html="qhl"></span><span class="font04">%</span></div>
+              </li>
+            </ul>
           </div>
         </div>
         <!-- 经营性净现金流 -->
         <div class="kptop"></div>
         <div class='kpbg02'>
+
           <div class="kpztdiv01">
-            <div>
-              <div class="kpztdiv02"><span class="font01">经营性净现金流</span></div>
-              <div class="kpztdiv03">
-                <span class="font02" v-html="jyxjxjl"></span>
-                <span class="font03">万元</span>
-              </div>
-              <div style="width:10%;float:left;height:45px;">
-                <img alt="" src="../assets/in_01.png" class="a01">
-              </div>
+            <div class="kpztdiv02"><span class="font01">经营性净现金流</span></div>
+            <div class="kpztdiv03">
+              <span class="font02" v-html="jyxjxjl"></span>
+              <span class="font03">万</span>
             </div>
-            <div style="padding-left:10%;"><span>(<span v-html="jh_month"></span>月，不含土地款)</span></div>
+            <img alt="" src="../assets/in_01.png" class="a01">
           </div>
           <div class="line"></div>
           <div class="kpztdiv04">
-            <div class="kpztdiv05"><span class="font04" v-html="yjh"></span></div>
-            <div class="kpztdiv05"><span class="font04" v-html="pcl"></span><span class="font04">%</span></div>
-            <div class="kpztdiv06"><span class="font05"><span ng-bind="jh_month"></span>月计划</span></div>
-            <div class="kpztdiv06"><span class="font05">偏差率</span></div>
+            <ul>
+              <li class="clearfix">
+                <div class="kpztdiv07"><span class="font05"><span v-html="jh_month"></span>月计划</span></div>
+                <div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv09"><span class="font04" v-html="yjh"></span></div>
+              </li>
+              <li class="clearfix">
+                <div class="kpztdiv07"><span class="font05"><span v-html="jh_month"></span>月偏差率</span></div>
+                <div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv09"><span class="font04" v-html="pcl"></span>%</div>
+              </li>
+            </ul>
           </div>
         </div>
         <!-- 监控资金余额 -->
-        <div class="kptop"></div>
-        <div class='kpbg02'>
-          <div class="kpztdiv01" >
-            <div class="kpztdiv02"><span class="font01">监控资金余额</span></div>
-            <div class="kpztdiv03">
-              <span class="font02" v-html="jkzjye"></span>
-              <span class="font03">万元</span>
-            </div>
-            <div style="width:10%;float:left;height:45px;">
-              <img alt="" src="../assets/in_01.png" class="a01">
-            </div>
-          </div>
-          <div class="line"></div>
-          <div class="kpztdiv04">
-            <div class="kpztdiv07" style="margin-top:4px;width:24%;"><span class="font04" v-html="xsjk_yh"></span></div>
-            <div class="kpztdiv07" style="margin-top:4px;width:23%;"><span class="font04" v-html="xsjk_zf"></span></div>
-            <div class="kpztdiv07" style="margin-top:4px;width:23%;"><span class="font04" v-html="zybz"></span></div>
-            <div class="kpztdiv07" style="margin-top:4px;width:30%;"><span class="font04" v-html="syzj"></span></div>
-            <div class="kpztdiv07" style="margin-top:0px;width:24%;"><span class="font05">销售监控</span></div>
-            <div class="kpztdiv07" style="margin-top:0px;width:23%;"><span class="font05">销售监控</span></div>
-            <div class="kpztdiv07" style="margin-top:0px;width:23%;"><span class="font05">质押保证</span></div>
-            <div class="kpztdiv07" style="margin-top:0px;width:30%;"><span class="font05">其他不可动用</span></div>
-            <div class="kpztdiv07" style="margin-top:0px;width:24%;font-size:12px;color:#808080;">(银行)</div>
-            <div class="kpztdiv07" style="margin-top:0px;width:23%;font-size:12px;color:#808080;">(政府)</div>
-            <div class="kpztdiv07" style="margin-top:0px;width:23%;"></div>
-            <div class="kpztdiv07" style="margin-top:0px;width:23%;"></div>
-          </div>
-        </div>
+        <!--<div class="kptop"></div>-->
+        <!--<div class='kpbg02'>-->
+          <!--<div class="kpztdiv01" >-->
+            <!--<div class="kpztdiv02"><span class="font01">监控资金余额</span></div>-->
+            <!--<div class="kpztdiv03">-->
+              <!--<span class="font02" v-html="jkzjye"></span>-->
+              <!--<span class="font03">万元</span>-->
+            <!--</div>-->
+            <!--<div style="width:10%;float:left;height:45px;">-->
+              <!--<img alt="" src="../assets/in_01.png" class="a01">-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="line"></div>-->
+          <!--<div class="kpztdiv04">-->
+            <!--<div class="kpztdiv07" style="margin-top:4px;width:24%;"><span class="font04" v-html="xsjk_yh"></span></div>-->
+            <!--<div class="kpztdiv07" style="margin-top:4px;width:23%;"><span class="font04" v-html="xsjk_zf"></span></div>-->
+            <!--<div class="kpztdiv07" style="margin-top:4px;width:23%;"><span class="font04" v-html="zybz"></span></div>-->
+            <!--<div class="kpztdiv07" style="margin-top:4px;width:30%;"><span class="font04" v-html="syzj"></span></div>-->
+            <!--<div class="kpztdiv07" style="margin-top:0px;width:24%;"><span class="font05">销售监控</span></div>-->
+            <!--<div class="kpztdiv07" style="margin-top:0px;width:23%;"><span class="font05">销售监控</span></div>-->
+            <!--<div class="kpztdiv07" style="margin-top:0px;width:23%;"><span class="font05">质押保证</span></div>-->
+            <!--<div class="kpztdiv07" style="margin-top:0px;width:30%;"><span class="font05">其他不可动用</span></div>-->
+            <!--<div class="kpztdiv07" style="margin-top:0px;width:24%;font-size:12px;color:#808080;">(银行)</div>-->
+            <!--<div class="kpztdiv07" style="margin-top:0px;width:23%;font-size:12px;color:#808080;">(政府)</div>-->
+            <!--<div class="kpztdiv07" style="margin-top:0px;width:23%;"></div>-->
+            <!--<div class="kpztdiv07" style="margin-top:0px;width:23%;"></div>-->
+          <!--</div>-->
+        <!--</div>-->
         <!-- 营销费用 -->
-        <div class="kptop"></div>
-        <div class='kpbg02'>
-          <div class="kpztdiv01">
-            <div class="kpztdiv02"><span class="font01">营销费用</span></div>
-            <div class="kpztdiv03">
-              <span class="font02" v-html="yxfy"></span>
-              <span class="font03">万元</span>
-            </div>
-          </div>
-          <div class="line"></div>
-          <div class="kpztdiv04">
-            <div class="kpztdiv05" style="text-align:left;">
-              <div style="float: left;width: 50%;text-align: right;">
-                <span class="font05">年度已批</span>
-              </div>
-              <span class="font04" style="margin-left:10px;" v-html="ndypfy"></span>
-            </div>
-            <div class="kpztdiv05" style="text-align:left;">
-              <div style="float: left;width: 50%;text-align: right;">
-                <span class="font05">实际费率</span>
-              </div>
-              <span class="font04" style="margin-left:10px;" v-html="sjfl"></span>
-              <span class="font04">%</span>
-            </div>
-            <div class="kpztdiv06" style="text-align:left;">
-              <div style="float: left;width: 50%;text-align: right;">
-                <span class="font05">剩余费用</span>
-              </div>
-              <span class="font04" style="margin-left:10px;" v-html="syfy"></span>
-            </div>
-            <div class="kpztdiv06" style="text-align:left;">
-              <div style="float: left;width: 50%;text-align: right;">
-                <span class="font05">已批费率</span>
-              </div>
-              <span class="font04" style="margin-left:10px;" v-html="ypfl"></span>
-              <span class="font04">%</span>
-            </div>
-          </div>
-        </div>
-        <div class="kptop lastkptop"></div>
+        <!--<div class="kptop"></div>-->
+        <!--<div class='kpbg02'>-->
+          <!--<div class="kpztdiv01">-->
+            <!--<div class="kpztdiv02"><span class="font01">营销费用</span></div>-->
+            <!--<div class="kpztdiv03">-->
+              <!--<span class="font02" v-html="yxfy"></span>-->
+              <!--<span class="font03">万元</span>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="line"></div>-->
+          <!--<div class="kpztdiv04">-->
+            <!--<div class="kpztdiv05" style="text-align:left;">-->
+              <!--<div style="float: left;width: 50%;text-align: right;">-->
+                <!--<span class="font05">年度已批</span>-->
+              <!--</div>-->
+              <!--<span class="font04" style="margin-left:10px;" v-html="ndypfy"></span>-->
+            <!--</div>-->
+            <!--<div class="kpztdiv05" style="text-align:left;">-->
+              <!--<div style="float: left;width: 50%;text-align: right;">-->
+                <!--<span class="font05">实际费率</span>-->
+              <!--</div>-->
+              <!--<span class="font04" style="margin-left:10px;" v-html="sjfl"></span>-->
+              <!--<span class="font04">%</span>-->
+            <!--</div>-->
+            <!--<div class="kpztdiv06" style="text-align:left;">-->
+              <!--<div style="float: left;width: 50%;text-align: right;">-->
+                <!--<span class="font05">剩余费用</span>-->
+              <!--</div>-->
+              <!--<span class="font04" style="margin-left:10px;" v-html="syfy"></span>-->
+            <!--</div>-->
+            <!--<div class="kpztdiv06" style="text-align:left;">-->
+              <!--<div style="float: left;width: 50%;text-align: right;">-->
+                <!--<span class="font05">已批费率</span>-->
+              <!--</div>-->
+              <!--<span class="font04" style="margin-left:10px;" v-html="ypfl"></span>-->
+              <!--<span class="font04">%</span>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="kptop lastkptop"></div>-->
       </div>
     </div>
 </template>
@@ -211,7 +241,14 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+  .clearfix::before {
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+  }
   #app {
     background: #01304a;
   }
@@ -224,142 +261,91 @@
     color: white;
     .titlezb {
       height: 45px;
+      background-color: #28465E;
       border-bottom: 1px solid #ccc;
     }
     .toptitlestyle {
-      width: 30%;
       float: left;
-      padding-top: 6px;
-      font-size: 23px;
-      text-align: center;
+      padding-left: 5%;
+      padding-top: 11px;
+      font-size: 18px;
       margin-left: 1%;
     }
     .kptop{
       width:100%;
       height:10px;
-      background-color: #F2F2F2;
     }
     .kpbg02{
       width:96%;
-      height:130px;
       margin-left:2%;
       margin-right:2%;
       background-color:#023c64;
     }
     .kpztdiv01{
       width:100%;
-      height:64px;
+      height: 40px;
+      color: #FBFBFB;
+      font-size: 18px;
+      line-height: 40px;
+      border-radius:5px 5px 0 0 ;
+      background-color: #558EB9;
     }
     .kpztdiv02{
       width:60%;
       float:left;
-      padding-top:18px;
+      vertical-align:middle;
       padding-left:10%;
+    }
+    .font02 {
+      color: #032746;
     }
     .kpztdiv03{
       width:30%;
       float:left;
-      padding-top:18px;
-    }
-    .kpztdiv04{
-      width:100%;
-    }
-    .kpztdiv05{
-      width:50%;
-      float:left;
-      margin-top:10px;
       text-align: center;
     }
-    .kpztdiv06{
-      width:50%;
-      float:left;
-      margin-top:3px;
-      text-align: center;
+    .kpztdiv01 img {
+      width: 15px;
+      height: 15px;
+      margin-top: 15px;
     }
-    .kpztdiv07{
-      width:33%;
-      float:left;
-      margin-top:7px;
-      text-align: center;
+    .font03 {
+      font-size: 13px;
     }
-    .kpztdiv08{
-      width:34%;
-      float:left;
-      margin-top:7px;
-      text-align: center;
+    .kpztdiv04 {
+      ul {
+        background-color: #1C3A56;
+        border-radius: 0 0 5px 5px;
+      }
+      li {
+        width: 100%;
+        padding: 8px 0;
+      }
+      .kpztdiv07 {
+        width: 30%;
+        float: left;
+        color: #EEF0F0;
+        padding-left: 10%;
+        font-size: 14px;
+      }
+      .kpztdiv08 {
+        width: 45%;
+        float: left;
+      }
+      .kpztdiv09 {
+        width: 25%;
+        float: left;
+        color: #EEF0F0;
+        padding-left: 5%;
+      }
     }
-    .kpztdiv09{
-      width:45%;
-      float:left;
-      padding-top:18px;
-      padding-left:10%;
+    .el-progress-bar__outer {
+      background-color: #002244 !important;
     }
-    .kpztdiv10{
-      width:30%;
-      float:left;
-      padding-top:20px;
+    .el-progress-bar__inner {
+      background-color: #FFA820 !important;
     }
-    .kpztdiv11{
-      width:25%;
-      float:left;
-      padding-top:20px;
-      padding-left:3%;
-    }
-    .kpztdiv12{
-      width:30%;
-      float:left;
-      margin-top:7px;
-      padding-left:10%;
-    }
-    .kpztdiv13{
-      width:15%;
-      float:left;
-      margin-top:7px;
-      text-align: left;
-    }
-    .kpztdiv14{
-      width:10%;
-      float:left;
-      margin-top:7px;
-      text-align: left;
-    }
-    .font01{
-      font-size:18px;
-      font-weight:bold;
-    }
-    .font02{
-      font-size:18px;
-      color:#FF9A11;
-    }
-    .font03{
-      font-size:14px;
-      color:#FF9A11;
-      margin-left:3px;
-    }
-    .font04{
-      font-size:16px;
-      color:#15ADEF;
-    }
-    .font05{
-      font-size:16px;
-      color:whitesmoke;
-    }
-    .line{
-      width:90%;
-      height:2px;
-      background-color:#F2F2F2;
-      margin-left:5%;
-    }
-    .a01{
-      float:right;
-      height:18px;
-      width:18px;
-      margin-top:10px;
-      margin-right:10px;
-    }
-    .lastkptop {
-      height: 0;
-      margin-bottom: 60px;
-    }
+
+
   }
 </style>

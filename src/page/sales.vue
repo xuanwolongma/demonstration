@@ -2,7 +2,7 @@
     <div class="sales">
       <div class="titlezb">
         <div class="toptitlestyle">销售情况</div>
-        <modelselect></modelselect>
+        <img src="../assets/jiantou.png" alt="">
       </div>
       <template>
         <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
@@ -10,46 +10,39 @@
               <div style="margin-top: 5px;">
                 <div class="salescontextfloat">
                   <div class="topmaincontentitem">
-                    <span class="topmaincontent04">签约金额:</span>
-                    <span class="topmaincontent03"><span v-html="qydataitem.par11"></span>亿</span>
-                    <span class="topmaincontent01">完成率:</span>
-                    <span class="topmaincontent02"><span v-html="qydataitem.par51"></span>%</span>
-                  </div>
-                  <div class="topmaincontentitem01">
-                    <!--<span class="topmaincontent05">(项目合计)</span>-->
+                    <img src="../assets/jinqian.png" alt="">
+                    <span class="topmaincontent04">签约金额</span>
+                    <div class="topmaincontent03"><span v-html="qydataitem.par11"></span>亿</div>
                   </div>
                   <div class="topmaincontentitem">
-                    <span class="topmaincontent04">签约目标:</span>
-                    <span class="topmaincontent03"><span v-html="qydataitem.par31"></span>亿</span>
-                    <span class="topmaincontent01"><span v-if="!qjt">完成率排名:</span><span v-if="qjt">激励完成:</span></span>
-                    <span class="topmaincontent02"><span v-if="!qjt" v-html="qydataitem.par52"></span><span v-if="qjt"><span v-html="qydataitem.par49"></span>%</span></span>
-                  </div>
-                  <div class="topmaincontentitem01">
-                    <span class="topmaincontent05" style="float: left;">(首<span v-html='month'></span>月)</span>
+                    <img src="../assets/jinqian.png" alt="">
+                    <span class="topmaincontent04">签约目标</span>
+                    <div class="topmaincontent03"><span v-html="qydataitem.par31"></span>亿</div>
                   </div>
                   <div class="topmaincontentitem">
-                    <span class="topmaincontent04">签约套数:</span>
-                    <span class="topmaincontent03"><span v-html="qydataitem.par12"></span>套</span>
-                    <span class="topmaincontent01">认购未签:</span>
-                    <span class="topmaincontent02"><span v-html="qydataitem.par28"></span>亿</span>
-                  </div>
-                  <div class="topmaincontentitem01">
-                    <span class="topmaincontent05">(无预售证)</span>
+                    <img src="../assets/jinqian.png" alt="">
+                    <span class="topmaincontent04">签约套数</span>
+                    <div class="topmaincontent03"><span v-html="qydataitem.par12"></span>套</div>
                   </div>
                   <div class="topmaincontentitem">
-                    <span class="topmaincontent04">认购未签:</span>
-                    <span class="topmaincontent03"><span v-html="qydataitem.par26"></span>亿</span>
-                    <span class="topmaincontent01">激励目标:</span>
-                    <span class="topmaincontent02"><span v-html="qydataitem.par48"></span>亿</span>
+                    <img src="../assets/wcjd.png" alt="">
+                    <span class="topmaincontent04">完成率</span>
+                    <div class="topmaincontent03"><span v-html="qydataitem.par51"></span>%</div>
                   </div>
-                  <div class="topmaincontentitem01">
-                    <span class="topmaincontent05" style="float: left;">(有预售证)</span>
+                  <div class="topmaincontentitem">
+                    <img src="../assets/wcjd.png" alt="">
+                    <span class="topmaincontent04"><span v-if="!qjt">完成率排名</span><span v-if="qjt">激励完成</span></span>
+                    <div class="topmaincontent03"><span v-if="!qjt" v-html="qydataitem.par52"></span><span v-if="qjt"><span v-html="qydataitem.par49"></span>%</span></div>
                   </div>
-                  <div class="topmaincontentitem" v-if='!qjt'>
-                    <span class="topmaincontent04">激励完成:</span>
-                    <span class="topmaincontent03"><span v-html="qydataitem.par49"></span>%</span>
-                    <span class="topmaincontent01">激励完成排名:</span>
-                    <span class="topmaincontent02"><span v-html="qydataitem.par50"></span></span>
+                  <div class="topmaincontentitem">
+                    <img src="../assets/wcjd.png" alt="">
+                    <span class="topmaincontent04">激励目标</span>
+                    <div class="topmaincontent03"><span v-html="qydataitem.par48"></span>亿</div>
+                  </div>
+                  <div class="topmaincontentitem">
+                    <img src="../assets/jinqian.png" alt="">
+                    <span class="topmaincontent04">认购未签</span>
+                    <div class="topmaincontent03"><span v-html="qydataitem.par28"></span>亿</div>
                   </div>
                 </div>
                 <div class="font05">
@@ -58,50 +51,47 @@
                 </div>
                 <div class="linegray"></div>
                 <div class="navbarcss">
-                  <div style="width:75%;float: left;">
-                    <img class="logstyle" src="../assets/sale-white@2x.png"/>
-                    <span class="font06">各<span ng-bind='xmorqu'></span>年度签约情况</span>
-                  </div>
-                  <div class="font07"><span>单位:<span v-html='dw1'></span>元</span></div>
-
+                  <div><span class="font06">各<span ng-bind='xmorqu'></span>年度签约情况</span></div>
+                  <img src="../assets/jiantou.png" alt="">
                 </div>
               </div>
-              <div class="col-md8 col-sm-8 col-xs-8" style="position: relative">
+              <div class="col-md8 col-sm-8 col-xs-8" style="position: relative;margin-bottom: 40px">
                 <div id="main" class="main"></div>
               </div>
           </el-tab-pane>
           <el-tab-pane label="7月" name="second">
             <div style="margin-top: 10px;">
-              <div class="topmaincontentitem">
-                <span class="topmaincontent04">签约金额:</span>
-                <span class="topmaincontent03"><span v-html="qydataitem.par9"></span><span v-html="dw1"></span></span>
-                <span class="topmaincontent01">完成率:</span>
-                <span class="topmaincontent02"><span v-html="qydataitem.par1"></span>%</span>
-              </div>
-              <div class="topmaincontentitem01">
-                <!--<span class="topmaincontent05">(项目合计)</span>-->
-              </div>
-              <div class="topmaincontentitem">
-                <span class="topmaincontent04">签约目标:</span>
-                <span class="topmaincontent03"><span v-html="qydataitem.par29"></span><span v-html="dw1"></span></span>
-                <span class="topmaincontent01"><span v-if="!qjt">完成率排名:</span><span v-if="qjt">正式认购:</span></span>
-                <span class="topmaincontent02"><span v-if="!qjt" v-html="qydataitem.par5"></span><span v-if="qjt" v-html="qydataitem.par17"></span><span ng-bind="dw1"></span></span>
-              </div>
-              <div class="topmaincontentitem01">
-                <span class="topmaincontent05" style="float: left;">(已摘牌合计)</span>
-              </div>
-              <div class="topmaincontentitem">
-                <span class="topmaincontent04">签约套数:</span>
-                <span class="topmaincontent03"><span v-html="qydataitem.par10"></span>套</span>
-                <span class="topmaincontent01">诚意认购:</span>
-                <span class="topmaincontent02"><span v-html="qydataitem.par19"></span><span v-html="dw1"></span></span>
-              </div>
-              <div class="topmaincontentitem01">
-                <!--<span class="topmaincontent05">(项目合计)</span>-->
-              </div>
-              <div class="topmaincontentitem" v-if="!qjt">
-                <span class="topmaincontent04">正式认购:</span>
-                <span class="topmaincontent03"><span v-html="qydataitem.par17"></span><span v-html="dw1"></span></span>
+              <div class="salescontextfloat1">
+                <div class="topmaincontentitem">
+                  <img src="../assets/jinqian.png" alt="">
+                  <span class="topmaincontent04">签约金额</span>
+                  <div class="topmaincontent03"><span v-html="qydataitem.par9"></span>亿</div>
+                </div>
+                <div class="topmaincontentitem">
+                  <img src="../assets/jinqian.png" alt="">
+                  <span class="topmaincontent04">签约目标</span>
+                  <div class="topmaincontent03"><span v-html="qydataitem.par29"></span>亿</div>
+                </div>
+                <div class="topmaincontentitem">
+                  <img src="../assets/jinqian.png" alt="">
+                  <span class="topmaincontent04">签约套数</span>
+                  <div class="topmaincontent03"><span v-html="qydataitem.par10"></span>套</div>
+                </div>
+                <div class="topmaincontentitem">
+                  <img src="../assets/wcjd.png" alt="">
+                  <span class="topmaincontent04">完成率</span>
+                  <div class="topmaincontent03"><span v-html="qydataitem.par1"></span>%</div>
+                </div>
+                <div class="topmaincontentitem">
+                  <img src="../assets/jinqian.png" alt="">
+                  <span class="topmaincontent04"><span v-if="!qjt">完成率排名:</span><span v-if="qjt">正式认购</span></span>
+                  <div class="topmaincontent03"><span v-if="!qjt" v-html="qydataitem.par5"></span><span v-if="qjt" v-html="qydataitem.par17"></span>亿</div>
+                </div>
+                <div class="topmaincontentitem">
+                  <img src="../assets/jinqian.png" alt="">
+                  <span class="topmaincontent04">诚意认购</span>
+                  <div class="topmaincontent03"><span v-html="qydataitem.par19"></span>亿</div>
+                </div>
               </div>
               <div class="font05">
                 <div>1.合同销售额按奖励门槛进行统计,含常规销售、非常规销售、品牌输出、代理销售、非产权车位。</div>
@@ -120,45 +110,38 @@
           </el-tab-pane>
           <el-tab-pane label="29日" name="third">
             <div style="margin-top: 10px;">
-            <div class="topmaincontentitem">
-              <span class="topmaincontent04">签约套数:</span>
-              <span class="topmaincontent03"><span v-html="qydataitem.par8"></span>套</span>
-              <span class="topmaincontent01">签约金额:</span>
-              <span class="topmaincontent02"><span v-html="qydataitem.par7"></span><span v-html="dw"></span></span>
-            </div>
-            <div class="topmaincontentitem01">
-              <!--<span class="topmaincontent05">(正式认购)</span>-->
-            </div>
-            <div class="topmaincontentitem">
-									<span class="topmaincontent04">
-										认购套数:
-									</span>
-              <span class="topmaincontent03"><span v-html="qydataitem.par14"></span>套</span>
-              <span class="topmaincontent01">
-										认购金额:
-									</span>
-              <span class="topmaincontent02"><span v-html="qydataitem.par13"></span><span v-html="dw"></span></span>
-            </div>
-            <div class="topmaincontentitem01">
-              <span class="topmaincontent05">(正式认购)</span>
-              <span class="topmaincontent05">(正式认购)</span>
-            </div>
-            <div class="topmaincontentitem">
-									<span class="topmaincontent04">
-										认购套数:
-                    <!--(诚意认购)-->
-									</span>
-              <span class="topmaincontent03"><span v-html="qydataitem.par16"></span>套</span>
-              <span class="topmaincontent01">
-										认购金额:
-                <!--(诚意认购)-->
-									</span>
-              <span class="topmaincontent02"><span v-html="qydataitem.par15"></span><span v-html='dw'></span></span>
-            </div>
-            <div class="topmaincontentitem01">
-              <span class="topmaincontent05">(诚意认购)</span>
-              <span class="topmaincontent05">(诚意认购)</span>
-            </div>
+              <div class="salescontextfloat1">
+                <div class="topmaincontentitem">
+                  <img src="../assets/wcjd.png" alt="">
+                  <span class="topmaincontent04">签约套数:</span>
+                  <span class="topmaincontent03"><span v-html="qydataitem.par8"></span>套</span>
+                </div>
+                <div class="topmaincontentitem">
+                  <img src="../assets/wcjd.png" alt="">
+                  <span class="topmaincontent04">认购套数:</span>
+                  <span class="topmaincontent03"><span v-html="qydataitem.par14"></span>套</span>
+                </div>
+                <div class="topmaincontentitem">
+                  <img src="../assets/wcjd.png" alt="">
+                  <span class="topmaincontent04">认购套数:</span>
+                  <span class="topmaincontent03"><span v-html="qydataitem.par16"></span>套</span>
+                </div>
+                <div class="topmaincontentitem">
+                  <img src="../assets/jinqian.png" alt="">
+                  <span class="topmaincontent04">签约金额:</span>
+                  <span class="topmaincontent03"><span v-html="qydataitem.par7"></span><span v-html="dw"></span></span>
+                </div>
+                <div class="topmaincontentitem">
+                  <img src="../assets/jinqian.png" alt="">
+                  <span class="topmaincontent04">认购金额:</span>
+                  <span class="topmaincontent03"><span v-html="qydataitem.par13"></span><span v-html="dw"></span></span>
+                </div>
+                <div class="topmaincontentitem">
+                  <img src="../assets/jinqian.png" alt="">
+                  <span class="topmaincontent04">认购金额:</span>
+                  <span class="topmaincontent03"><span v-html="qydataitem.par15"></span><span v-html='dw'></span></span>
+                </div>
+              </div>
             <div class="font05">
               <div>1.合同销售额按奖励门槛进行统计,含常规销售、非常规销售、品牌输出、代理销售、非产权车位。</div>
               <div>2.数据来源:售楼系统,更新时间:{{dtts}}</div>
@@ -200,17 +183,17 @@
               qydataitem:{
                 par11:3356.70,par51:174,par31:1924.58,par52:12,par49:108,par12:335542,par28:108.92,par26:115.03,
                 par50:6421.10,par9:337,par1:103,par29:328,par5:12,par17:402,par10:35109,par19:27,
-                par8:2329,par7:221834,par14:6106,par13:479571,par16:696,par15:65144,
+                par8:2329,par7:221834,par14:6106,par13:479571,par16:696,par15:65144,par48:2781
               },
-              syhz:[4.33,0.61,3.72],
-              qyhz:[7.21,2.96,4.25],
-              qhl:[62.49,82.89,53.34],
-              syhz1:[2.33,4.61,1.72],
-              qyhz1:[1.21,7.96,4.25],
-              qhl1:[67.49,42.89,76.34],
-              syhz2:[6.33,5.61,2.72],
-              qyhz2:[5.21,6.96,4.25],
-              qhl2:[89.49,70.89,53.34],
+              syhz:[4.33,0.61,3.72,2.56],
+              qyhz:[7.21,2.96,4.25,6.68],
+              qhl:[62.49,82.89,53.34,45.87],
+              syhz1:[2.33,4.61,1.72,4.98],
+              qyhz1:[1.21,7.96,4.25,6.24],
+              qhl1:[67.49,42.89,76.34,89.32],
+              syhz2:[6.33,5.61,2.72,4.54],
+              qyhz2:[5.21,6.96,4.25,7.21],
+              qhl2:[89.49,70.89,53.34,76.43],
             }
         },
       mounted(){
@@ -242,7 +225,7 @@
               },
               legend: {
                 textStyle: {
-                  color: '#000',
+                  color: '#9FA4A5',
                 },
 
                 data:['剩余货值','签约货值','去化率']
@@ -257,18 +240,21 @@
                 {
                   type : 'category',
                   splitLine:{
-                    show: true,
-                    lineStyle:{
-                      color:'white'
-                    }
+                    show: false,
                   },
                   axisLabel:{
                     interval:0,
                     textStyle:{
-                      color:'white'
+                      color:'#FAF9F9',
+                      width:5
                     }
                   },
-                  data : ['整体货值','上年积存\n积存目标:100亿元','本年新货\n新货目标：70%']
+                  axisLine:{
+                    lineStyle:{
+                      color:'#183D5C'
+                    }
+                  },
+                  data : ['整体货值','上年积存','本年新货\n新货目标：70%','全新开盘']
                 }
               ],
               yAxis : [
@@ -312,11 +298,11 @@
                   type:'bar',
                   itemStyle: {
                     normal: {
-                      color: '#6AC3EF',
+                      color: '#FE7C31',
                     },
                   },
-                  barWidth: 50,
-                  stack: '广告',
+                  barWidth: 20,
+//                  stack: '广告',
                   data:b
                 },
                 {
@@ -324,12 +310,12 @@
                   type:'bar',
                   itemStyle: {
                     normal: {
-                      color: '#FE5A35',
+                      color: '#55C6FE',
                     },
                   },
 
-                  barWidth: 50,
-                  stack: '广告',
+                  barWidth: 20,
+//                  stack: '广告',
                   data:c
                 },
                 {
@@ -338,7 +324,7 @@
                   yAxisIndex: 1,
                   itemStyle: {
                     normal: {
-                      color: '#31B377'
+                      color: '#50F5C3'
                     },
                   },
                   label:{
@@ -373,13 +359,18 @@
     .titlezb {
       height: 45px;
       border-bottom: 1px solid #ccc;
+      background-color: #28465E;
+      img {
+        margin: 20px 0 0 15px;
+        height: 10px;
+        width: 10px;
+      }
     }
     .toptitlestyle {
-      width: 30%;
       float: left;
-      padding-top: 6px;
-      font-size: 23px;
-      text-align: center;
+      padding-left: 5%;
+      padding-top: 11px;
+      font-size: 18px;
       margin-left: 1%;
     }
     .el-tabs__header {
@@ -391,59 +382,59 @@
       margin-left: 1%;
       margin-right: 1%;
       .el-tabs__nav {
-        width: 100%;
+        width: 60%;
+        margin: 0 auto;
+        float: none;
       }
       .el-tabs__item {
         width: 33.3%;
-        border: 1px solid #009ae4;
+        border: 1px solid #536A7A;
         text-align: center;
-        color: white;
+        color: #1F3E59;
+        background-color: #667D8D;
       }
       .el-tabs__item.is-active {
-        border: 1px solid #009ae4;
-        border-bottom-color: #009ae4;
+        border: 1px solid #536A7A;
+        border-bottom-color: #536A7A;
         border-radius: 4px 4px 0 0;
-        background-color: #009ae4;
+        background-color: #ACB9C1;
         color: #333;
       }
     }
     .salescontextfloat {
       overflow-y: scroll;
       height: 140px;
+      margin: 0 5%;
+    }
+    .salescontextfloat1 {
+      overflow-y: scroll;
+      height: 140px;
+      margin: 0 5%;
     }
     .topmaincontentitem {
-      width: 96%;
-      height: 19px;
-      margin-left: 2%;
-      margin-right: 2%;
-      line-height: 19px;
-    }
-    .topmaincontent04 {
-      width: 21%;
-      font-size: 16px;
+      width: 33.333%;
       float: left;
-      color: white;
-    }
-    .topmaincontent03 {
-      width: 26%;
-      font-size: 16px;
-      float: left;
-      text-align: right;
-      color: #009ae4;
-    }
-    .topmaincontent01 {
-      width: 24%;
-      font-size: 16px;
-      float: left;
-      color: white;
-      margin-left: 3%;
-    }
-    .topmaincontent02 {
-      width: 24%;
-      font-size: 16px;
-      text-align: right;
-      color: #009ae4;
-      float: left;
+      vertical-align:middle;
+      padding: 8px 0 10px 0;
+      border-bottom: 2px solid #103552;
+      .topmaincontent04 {
+        font-size: 14px;
+        color: white;
+      }
+      .topmaincontent03 {
+        font-size: 14px;
+        margin:4px 0 0 23px;
+        span {
+          color: #DA860E;
+          font-size: 17px;
+          margin-right: 5px;
+        }
+      }
+      img {
+        margin-right: 5px;
+        width: 18px;
+        height: 18px;
+      }
     }
     .topmaincontentitem01 {
       width: 96%;
@@ -460,26 +451,30 @@
       margin-right: 24%;
     }
     .font05 {
+      margin-top: -4px;
       font-size: 14px;
-      float: left;
       text-indent: 1.2em;
-      color: whitesmoke;
-      margin-top: 8px;
+      color: #6C97B8;
+      padding: 8px 0;
+      background-color: #183D5A;
     }
     .linegray {
-      background-image: url(../assets/grayline.png);
-      background-repeat: repeat;
       width: 100%;
       height: 10px;
-      margin-top: 68px;
     }
     .navbarcss {
-      height: 40px;
-      line-height: 40px;
-      background-image: url(../assets/common-bluebox@3x.png);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      margin-top: 5px;
+      padding-left: 5%;
+      height: 45px;
+      line-height: 45px;
+      background-color: #183D5A;
+      div {
+        float: left;
+      }
+      img {
+        margin: 0 0 0 15px;
+        height: 10px;
+        width: 10px;
+      }
     }
     .logstyle {
       margin-left: 5%;

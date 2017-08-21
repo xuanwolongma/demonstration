@@ -1,58 +1,76 @@
 <!--<区域桌面-回款情况-->
 <template>
     <div class="backmoney">
-      <div class="maintop" style="height: 210px">
+      <div class="maintop">
         <div class="titlezb">
           <div class="toptitlestyle">回款情况</div>
-          <modelselect></modelselect>
+          <img src="../assets/jiantou.png" alt="">
         </div>
         <div>
-          <div style="margin-top: 4px;">
+          <div style="margin:4px 0 0" class="clearfix">
             <div class="topmaincontentitem">
-              <span class="topmaincontent04" style="width: 70%">当年签约(资金管控口径):</span>
-              <span class="topmaincontent02" style="width: 30%">{{backMoneyDetail.dnqyzjgkvalue}}</span>
-            </div>
-            <div class="topmaincontentitem">
-              <span class="topmaincontent04" style="width: 70%">当月签约(资金管控口径):</span>
-              <span class="topmaincontent02" style="width: 30%">{{backMoneyDetail.dyqyzjgkvalue}}</span>
+              <img src="../assets/jinqian.png" alt="">
+              <span class="topmaincontent04">当年签约</span>
+              <div class="topmaincontent02"><span v-html="backMoneyDetail.dnqyzjgkvalue"></span>亿</div>
             </div>
             <div class="topmaincontentitem">
-              <span class="topmaincontent04" style="width: 23%">当年总回款:</span>
-              <span class="topmaincontent03" style="width: 28%">{{backMoneyDetail.dnzhkvalue}}</span>
-              <span class="topmaincontent01"  style="width: 25%">当月回款金额:</span>
-              <span class="topmaincontent02" style="width: 21%">{{backMoneyDetail.dyhkjevalue}}</span>
+              <img src="../assets/jinqian.png" alt="">
+              <span class="topmaincontent04">当月签约</span>
+              <div class="topmaincontent02"><span v-html="backMoneyDetail.dyqyzjgkvalue"></span>亿</div>
             </div>
             <div class="topmaincontentitem">
-              <span class="topmaincontent04" style="width: 33%">当年签约当年回款:</span>
-              <span class="topmaincontent03" style="width: 18%">{{backMoneyDetail.dnqydnhkvalue}}</span>
-              <span class="topmaincontent01" style="width: 28%"> <!--{{backMoneyDetail.jcjename}}-->逾期欠款总额:</span>
-              <span class="topmaincontent02" style="width: 18%">{{backMoneyDetail.cqqkzevalue}}</span>
+              <img src="../assets/jinqian.png" alt="">
+              <span class="topmaincontent04">当年总回款</span>
+              <div class="topmaincontent02"><span v-html="backMoneyDetail.dnzhkvalue"></span>亿</div>
             </div>
             <div class="topmaincontentitem">
-              <span class="topmaincontent04" style="width: 25%">回款率:</span>
-              <span class="topmaincontent03" style="width: 26%">{{backMoneyDetail.hklvalue+'%'}}</span>
-              <span class="topmaincontent01" style="width: 30%"> <!--{{backMoneyDetail.jcjename}}-->上月回款率:</span>
-              <span class="topmaincontent02" style="width: 16%">{{backMoneyDetail.syhklvalue+"%"}}</span>
+              <img src="../assets/jinqian.png" alt="">
+              <span class="topmaincontent04">当月回款金额</span>
+              <div class="topmaincontent02"><span v-html="backMoneyDetail.dyhkjevalue"></span>亿</div>
             </div>
             <div class="topmaincontentitem">
-              <span class="topmaincontent04" style="width: 30%;">回款率变动:</span>
-              <span class="topmaincontent03" style="width: 21%;">{{backMoneyDetail.hklbdvalue+"%"}}</span>
-              <span class="topmaincontent01" style="width: 25%;">监控资金余额:</span>
-              <span class="topmaincontent02" style="width: 21%;">{{backMoneyDetail.jszjyevalue}}</span>
+              <img src="../assets/jinqian.png" alt="">
+              <span class="topmaincontent04">当年签约当年回款:</span>
+              <div class="topmaincontent02"><span v-html="backMoneyDetail.dnqydnhkvalue"></span>亿</div>
             </div>
-            <div class="font08">
-              <div style="text-indent: -0.3rem">数据来源:售楼系统,更新时间:{{dtts}}</div>
+            <div class="topmaincontentitem">
+              <img src="../assets/jinqian.png" alt="">
+              <span class="topmaincontent04">逾期欠款总额:</span>
+              <div class="topmaincontent02"><span v-html="backMoneyDetail.cqqkzevalue"></span>亿</div>
             </div>
+            <div class="topmaincontentitem">
+              <img src="../assets/wcjd.png" alt="">
+              <span class="topmaincontent04">回款率:</span>
+              <div class="topmaincontent02"><span v-html="backMoneyDetail.hklvalue"></span>%</div>
+            </div>
+            <div class="topmaincontentitem">
+              <img src="../assets/wcjd.png" alt="">
+              <span class="topmaincontent04">上月回款率:</span>
+              <div class="topmaincontent02"><span v-html="backMoneyDetail.syhklvalue"></span>%</div>
+            </div>
+            <div class="topmaincontentitem">
+              <img src="../assets/wcjd.png" alt="">
+              <span class="topmaincontent04">回款率变动:</span>
+              <div class="topmaincontent02"><span v-html="backMoneyDetail.hklbdvalue"></span>%</div>
+            </div>
+            <div class="topmaincontentitem">
+              <img src="../assets/jinqian.png" alt="">
+              <span class="topmaincontent04">监控资金余额:</span>
+              <div class="topmaincontent02"><span v-html="backMoneyDetail.jszjyevalue"></span>亿</div>
+            </div>
+          </div>
+          <div class="font08">
+            <div style="text-indent: -0.3rem">数据来源:售楼系统,更新时间:{{dtts}}</div>
           </div>
         </div>
       </div>
-      <div class="col-md-7 col-xs-7 backmoneyT" style="width: 100%;background: #ffffff;">
+      <div class="col-md-7 col-xs-7 backmoneyT" style="width: 100%;">
         <ul id="myTab" class="nav nav-tabs">
           <li class="listyle active"  style="border-radius: 5px 5px 5px 5px;">
             <div class="navbarcss">
-              <div style="width:75%;float: left;">
-                <img class="logstyle" src="../assets/sale-white@2x.png"/>
+              <div style="width:100%;float: left;">
                 <span class="font06">超期欠款</span>
+                <img class="logstyle" src="../assets/jiantou.png"/>
               </div>
             </div>
           </li>
@@ -79,16 +97,16 @@ export default{
       dnxzqk:436,
       dtts:'2017-07-27 02:20',
       backMoneyDetail:{
-        dnqyzjgkvalue:'3018亿',
-        dyqyzjgkvalue:'235亿',
-        dnzhkvalue:'2434亿',
-        dyhkjevalue:'267亿',
-        dnqydnhkvalue:'2055亿',
-        cqqkzevalue:'455亿',
+        dnqyzjgkvalue:'3018',
+        dyqyzjgkvalue:'235',
+        dnzhkvalue:'2434',
+        dyhkjevalue:'267',
+        dnqydnhkvalue:'2055',
+        cqqkzevalue:'455',
         hklvalue:'81',
         syhklvalue:'78',
         hklbdvalue:'104',
-        jszjyevalue:'556亿'
+        jszjyevalue:'556'
       }
     }
   },
@@ -99,7 +117,7 @@ export default{
       title : {
         text: this.dnxzqk+'万元',//需替换数据
         textStyle:{
-          color:'red'
+          color:'#FF9F00'
         }
       },
       tooltip : {
@@ -141,6 +159,7 @@ export default{
           name:'',
           type:'bar',
           data:[312,56,36,33],//需替换
+          barWidth:20,
           itemStyle:{
             normal:{
               color:'#60cafc',
@@ -198,6 +217,13 @@ export default{
   #app {
     background: #01304a;
   }
+  .clearfix::before {
+    content: '';
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
   .backmoney {
     background: #01304a;
     border-top: #1d87ff solid 1px;
@@ -210,33 +236,46 @@ export default{
     }
     .titlezb {
       height: 45px;
+      background-color: #28465E;
       border-bottom: 1px solid #ccc;
+      img {
+        margin: 20px 0 0 15px;
+        margin: 20px 0 0 15px;
+        height: 10px;
+        width: 10px;
+      }
     }
     .toptitlestyle {
-      width: 30%;
       float: left;
-      padding-top: 6px;
-      font-size: 23px;
-      text-align: center;
+      padding-left: 5%;
+      padding-top: 11px;
+      font-size: 18px;
       margin-left: 1%;
     }
     .topmaincontentitem {
-      width: 96%;
-      height: 22px;
-      margin-left: 2%;
-      margin-right: 2%;
-      line-height: 18px;
+      width: 50%;
+      float: left;
+      padding-left: 5%;
+      margin-top: 5px;
+      border-bottom: 1px solid #28465E;
+      img {
+        margin-right: 5px;
+        width: 18px;
+        height: 18px;
+      }
     }
     .topmaincontent04 {
       font-size: 14px;
-      float: left;
       color:white;
     }
     .topmaincontent02 {
+      margin:5px 0 8px 23px;
       font-size: 14px;
-      text-align: right;
-      color: #009ae4;
-      float: left;
+      span {
+        margin-right: 5px;
+        font-size: 17px;
+        color: #FF9C00;
+      }
     }
     .topmaincontent03 {
       font-size: 14px;
@@ -252,23 +291,24 @@ export default{
     }
     .font08 {
       font-size: 12px;
-      float: left;
       text-indent: 0.5em;
-      color: whitesmoke;
-      margin-top: 8px;
-      margin-left: 10px;
+      color: #7299B9;
+      padding: 8px 0 8px 10px;
+      background-color: #183D5A;
     }
     .backmoneyT .listyle {
       width: 100%;
       text-align: left;
     }
     .backmoneyT .navbarcss {
-      height: 40px;
-      line-height: 40px;
-      background-image: url(../assets/common-bluebox_b.png);
-      background-repeat: no-repeat;
-       background-size: 100% 100%;
+      height: 45px;
+      line-height: 45px;
       margin-top: 5px;
+      background-color: #244661;
+      img {
+        height: 10px;
+        width: 10px;
+      }
     }
     .backmoneyT .logstyle {
       vertical-align:middle;

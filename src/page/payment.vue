@@ -3,7 +3,6 @@
     <div class="maintop">
       <div class="titlezb1">
         <div class="toptitlestyle01">回款情况</div>
-        <modelselect></modelselect>
       </div>
       <div>
         <div class="navbarcss01">
@@ -213,14 +212,14 @@
     }
     .titlezb1 {
       height: 45px;
+      background-color: #28465E;
       border-bottom: 1px solid #ccc;
     }
     .toptitlestyle01 {
-      width: 30%;
       float: left;
-      padding-top: 6px;
-      font-size: 23px;
-      text-align: center;
+      padding-left: 5%;
+      padding-top: 11px;
+      font-size: 18px;
       margin-left: 1%;
     }
     .navbarcss01 {

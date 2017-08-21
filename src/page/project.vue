@@ -2,7 +2,6 @@
     <div class="project">
       <div class="headerXM">
           <div class="datas">2017-07-28</div>
-          <modelselect class="titlezb"></modelselect>
       </div>
       <div class="fx">
         <div class="content" >
@@ -299,11 +298,10 @@
                 </table>
               </div>
             </div>
-            <div class="c1">
-              <div class="table lasttable">
+            <div class="c1" style="margin-bottom: 60px;background-color: #1B3E5A">
+              <div class="table lasttable" style="padding: 10px 0;color: #6E98B7">
                 <div style="text-align:left;font-size:10px;">注：已推售货值指已拿到预售证或已竣工部分货值</div>
                 <div style="text-align:left;font-size:10px;">数据统计时间：{{dtts}}</div>
-                <div style="height:50px;"></div>
               </div>
             </div>
           </div>
@@ -375,7 +373,7 @@
     border-top: #1d87ff solid 1px;
     width: 100%;
     height: 100% !important;
-    color: white;
+    color: #CDD3D6;
     margin-top: 45px;
     .headerXM {
       height: 45px;
@@ -395,21 +393,20 @@
     .btdiv {
       width: 100%;
       height: 30px;
-      margin-top: 30px;
-      margin-bottom: 30px;
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
     .btfont {
       overflow: hidden;
       color: #FFFFFF;
-      font-size: 20px;
+      font-size: 18px;
       padding-left: 2%;
     }
     .rectangle {
-      width: 50%;
-      height: 30px;
-      line-height: 30px;
-      background-color: #009AE4;
-      border-radius: 0 40px 0 0;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      background-color: #28465E;
     }
     .cc {
       margin-bottom: 10px;
@@ -427,10 +424,12 @@
       text-align: center;
     }
     .table .table {
-      background-color: #fff;
+      border-color: #C1DAE8;
+      background-color: #D1E3EF;
     }
     .table-bordered>thead>tr>td {
-      background-color: #D5FFFB;
+      color: #0C2F4C;
+      background-color: #92BED9;
       border-bottom-width: 1px;
     }
     .hj1 td {
@@ -454,8 +453,11 @@
     .lasttable {
       color: whitesmoke;
     }
-    .table tbody tr:nth-child(2n+1) {
+    .table tbody tr {
       background-color: #f4f4f4;
+    }
+    .table tbody tr:nth-child(2n+1) {
+      background-color: #ccc;
     }
   }
 </style>
