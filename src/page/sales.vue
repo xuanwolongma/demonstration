@@ -99,9 +99,8 @@
               </div>
               <div class="linegray"></div>
               <div class="navbarcss">
-                <img class="logstyle" src="../assets/sale-white@2x.png"/>
                 <span class="font06">各<span v-html='xmorqu'></span>月度签约情况</span>
-                <span class="font07">单位:<span v-html='dw1'></span>元</span>
+                <img src="../assets/jiantou.png" alt="">
               </div>
             </div>
             <div class="col-md8 col-sm-8 col-xs-8" style="position: relative">
@@ -148,9 +147,8 @@
             </div>
             <div class="linegray"></div>
             <div class="navbarcss">
-              <img class="logstyle" src="../assets/sale-white@2x.png"/>
               <span class="font06">各<span v-html='xmorqu'></span>昨日销售</span>
-              <span class="font07">单位:<span v-html='dw1'></span>元</span>
+              <img src="../assets/jiantou.png" alt="">
             </div>
           </div>
             <div class="col-md8 col-sm-8 col-xs-8">

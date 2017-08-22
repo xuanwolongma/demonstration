@@ -97,32 +97,32 @@
         </div>
         <!-- 经营性净现金流 -->
         <div class="kptop"></div>
-        <div class='kpbg02'>
+        <!--<div class='kpbg02'>-->
 
-          <div class="kpztdiv01">
-            <div class="kpztdiv02"><span class="font01">经营性净现金流</span></div>
-            <div class="kpztdiv03">
-              <span class="font02" v-html="jyxjxjl"></span>
-              <span class="font03">万</span>
-            </div>
-            <img alt="" src="../assets/in_01.png" class="a01">
-          </div>
-          <div class="line"></div>
-          <div class="kpztdiv04">
-            <ul>
-              <li class="clearfix">
-                <div class="kpztdiv07"><span class="font05"><span v-html="jh_month"></span>月计划</span></div>
-                <div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>
-                <div class="kpztdiv09"><span class="font04" v-html="yjh"></span></div>
-              </li>
-              <li class="clearfix">
-                <div class="kpztdiv07"><span class="font05"><span v-html="jh_month"></span>月偏差率</span></div>
-                <div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>
-                <div class="kpztdiv09"><span class="font04" v-html="pcl"></span>%</div>
-              </li>
-            </ul>
-          </div>
-        </div>
+          <!--<div class="kpztdiv01">-->
+            <!--<div class="kpztdiv02"><span class="font01">经营性净现金流</span></div>-->
+            <!--<div class="kpztdiv03">-->
+              <!--<span class="font02" v-html="jyxjxjl"></span>-->
+              <!--<span class="font03">万</span>-->
+            <!--</div>-->
+            <!--<img alt="" src="../assets/in_01.png" class="a01">-->
+          <!--</div>-->
+          <!--<div class="line"></div>-->
+          <!--<div class="kpztdiv04">-->
+            <!--<ul>-->
+              <!--<li class="clearfix">-->
+                <!--<div class="kpztdiv07"><span class="font05"><span v-html="jh_month"></span>月计划</span></div>-->
+                <!--<div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>-->
+                <!--<div class="kpztdiv09"><span class="font04" v-html="yjh"></span></div>-->
+              <!--</li>-->
+              <!--<li class="clearfix">-->
+                <!--<div class="kpztdiv07"><span class="font05"><span v-html="jh_month"></span>月偏差率</span></div>-->
+                <!--<div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>-->
+                <!--<div class="kpztdiv09"><span class="font04" v-html="pcl"></span>%</div>-->
+              <!--</li>-->
+            <!--</ul>-->
+          <!--</div>-->
+        <!--</div>-->
         <!-- 监控资金余额 -->
         <!--<div class="kptop"></div>-->
         <!--<div class='kpbg02'>-->
@@ -344,6 +344,9 @@
     }
     .el-progress-bar__inner {
       background-color: #FFA820 !important;
+    }
+    .el-progress-bar__innerText{
+      display: none;
     }
 
 

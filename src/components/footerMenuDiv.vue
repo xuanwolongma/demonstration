@@ -34,6 +34,12 @@ export default {
       console.log(key, keyPath);
       this.$emit("cgFooter",key);
     }
+  },
+  watch: {
+    menudata: function (val, oldval) {
+      this.activeIndex = "1";
+      console.log(this.activeIndex)
+    }
   }
 }
 </script>
