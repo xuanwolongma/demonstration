@@ -137,7 +137,7 @@
                   <thead>
                   <tr>
                     <td class="myth" rowspan="2">房型</td>
-                    <td colspan="4"><span ng-bind="month"></span>月份签约</td>
+                    <td colspan="4"><span v-html="month"></span>月份签约</td>
                   </tr>
                   <tr>
                     <td >套数</td>
@@ -265,7 +265,7 @@
                   <thead>
                   <tr>
                     <td class="qtd1" rowspan="2">房型<br><span style="font-size: 12px;">(来源售楼系统)</span></td>
-                    <td colspan="4">首<span ng-bind="month"></span>月签约</td>
+                    <td colspan="4">首<span v-html="month"></span>月签约</td>
                   </tr>
                   <tr>
                     <td class="qtd2">套数</td>
@@ -320,6 +320,8 @@
             return {
               dtts:'2017-7-30',
               btdiv:true,
+              month:'07',
+              byqytsAmount:'90',
 //                今日销情
               today:{
                 jrzsrgtsAmount:3,
