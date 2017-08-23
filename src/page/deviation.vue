@@ -11,11 +11,11 @@
     </div>
     <div class="cos_title_right">
       <span>数据截止日期：</span>
-      <span >7</span>月拍照数据
+      <span >9</span>月拍照数据
     </div>
     <div class="charts" id="cos_echarts"></div>
     <div class="cos_list">
-      <div class="cos_list_content" v-for="qy in arys" @click="gochild(qy.key4)">
+      <div class="cos_list_content" v-for="qy in arys"  >
         <div class="cos_lc_one sheng"  >{{qy.key9}}</div>
         <div class="cos_lc_two" >
           <div class="bg" :style="{width:qy.key1+'%'}"></div>
@@ -86,8 +86,8 @@ export default {
   data(){
     return{
       activeName:"firsts",
-      cmomnth:['02','03','04','05','06','07'],
-      cbl:['-2.28','-2.73','-2.49','-4.43','-2.72','-3.04'],
+      cmomnth:['01','02','03','04','05','06','07','08','09'],
+      cbl:['-2.02','-2.28','-2.73','-2.49','-4.43','-2.72','-3.04','-1.25','-2.12'],
       myf:true,
       dialogmain:false,
       arys:[{key1:"100",key2:"2",key3:"2",key4:"深圳",key5:"-0.27%",key6:"45.78亿",key7:"45.66亿" ,key8:"0.82%",key9:"1",key10:"1",yjdiv:true},
@@ -188,10 +188,10 @@ export default {
             }
           ],
           grid: {
-    //			        x: 20,
-            y: 20,
-    //			        x2: 20,
-            y2: 30,
+                x: 40,
+                y: 20,
+                x2:20,
+                y2: 30,
             // width: {to	talWidth} - x - x2,
             // height: {totalHeight} - y - y2,
             backgroundColor: 'rgba(0,0,0,0)',
@@ -204,19 +204,20 @@ export default {
               type:'line',
               clickable:true,
 //              symbol:'image:../assets/circleblue.png',
-              symbol:'circle',
-              symbolSize:10,
+//              symbol:'circle',
+              symbolSize:8,
               data:b,
-              itemStyle:{
+              itemStyle: {
+                normal: {
+                  color: '#50F5C3'
+                },
+              },
+              label:{
                 normal:{
-                  color:'#008ADC',
-                  lineStyle:{
-                    color:'#fff'
-                  }
-
-                }
-
-              }
+                  show: true,
+                  formatter: '{c}%'
+                },
+              },
             }
           ]
         };
@@ -249,8 +250,11 @@ export default {
     .top_title {
       height: 50px;
       line-height: 50px;
-      text-align: center;
+      text-align: left;
       color: #fff;
+      padding-left: 20px;
+      background-color: #28465E;
+      border-bottom: 1px solid #ddd;
     }
     .ymsm{
       float: right;
@@ -263,12 +267,12 @@ export default {
     }
     .cos_title_left {
       float: left;
-      font-size: 16px;
+      font-size: 14px;
       padding-left: 10px;
       margin-top: 10px;
     }
     .cos_title_left_span2 {
-      font-size: 20px;
+      font-size: 18px;
     }
     .cos_title_right {
       float: right;
@@ -309,7 +313,7 @@ export default {
       border-top-left-radius: 5px;
     }
      .sheng{
-      background: #FFDACB;
+       background-color: #558EB9;
     }
      .qian{
       background: #FFEBCD;
@@ -470,25 +474,4 @@ export default {
 
   }
 
-  .el-menu--dark{
-    background: #023c64;
-  }
-  .el-menu--horizontal.el-menu--dark .el-menu-item:hover, .el-menu--horizontal.el-menu--dark .el-submenu__title:hover{
-    background: #023c64;
-  }
-  .el-menu{
-    -webkit-border-radius:0;
-    -moz-border-radius:0;
-    border-radius:0;
-  }
-  /*.el-menu--dark .el-menu-item, .el-menu--dark .el-submenu__title{*/
-    /*color: white;*/
-  /*}*/
-  .el-table tr,.el-table th>.cell,.el-table__footer-wrapper tbody td{
-    background: #023c64;
-    color: #fff;
-  }
-  .el-table th>.cell,.el-table th{
-    background-color:#198bfe;
-  }
 </style>

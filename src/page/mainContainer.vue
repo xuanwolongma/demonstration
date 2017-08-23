@@ -133,6 +133,7 @@ export default {
  .mainContainer{
    width: 100%;
    height: 100%;
+   background: #032544;
    .mainConten {
      margin-top: 45px;
    }

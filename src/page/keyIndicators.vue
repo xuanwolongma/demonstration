@@ -20,17 +20,17 @@
             <ul>
               <li class="clearfix">
                 <div class="kpztdiv07"><span class="font05">本年目标</span></div>
-                <div class="kpztdiv08"><el-progress :percentage="100" text-inside="true"  show-text="false"></el-progress></div>
+                <div class="kpztdiv08"><el-progress :percentage="100" :text-inside="true"  :show-text="false"></el-progress></div>
                 <div class="kpztdiv09"><span class="font04" v-html="bnmb"></span></div>
               </li>
               <li class="clearfix">
                 <div class="kpztdiv07"><span class="font05">其他业绩</span></div>
-                <div class="kpztdiv08"><el-progress :percentage="23" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv08"><el-progress :percentage="23" :text-inside="true" :show-text="false"></el-progress></div>
                 <div class="kpztdiv09"><span class="font04" v-html="ewyj"></span></div>
               </li>
               <li class="clearfix">
                 <div class="kpztdiv07"><span class="font05">完成率</span></div>
-                <div class="kpztdiv08"><el-progress :percentage="45" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv08"><el-progress :percentage="45" :text-inside="true" :show-text="false"></el-progress></div>
                 <div class="kpztdiv09"><span class="font04" v-html="wcl"></span><span class="font04">%</span></div>
               </li>
             </ul>
@@ -52,12 +52,12 @@
             <ul>
               <li class="clearfix">
                 <div class="kpztdiv07"><span class="font05">超期欠款</span></div>
-                <div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv08"><el-progress :percentage="100" :text-inside="true" :show-text="false"></el-progress></div>
                 <div class="kpztdiv09"><span class="font04" v-html="cqqk"></span></div>
               </li>
               <li class="clearfix">
                 <div class="kpztdiv07"><span class="font05">未超期欠款</span></div>
-                <div class="kpztdiv08"><el-progress :percentage="14" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv08"><el-progress :percentage="14" :text-inside="true" :show-text="false"></el-progress></div>
                 <div class="kpztdiv09"><span class="font04" v-html="wcqqk"></span></div>
               </li>
             </ul>
@@ -79,17 +79,17 @@
             <ul>
               <li class="clearfix">
                 <div class="kpztdiv07"><span class="font05">累计已推售</span></div>
-                <div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv08"><el-progress :percentage="100" :text-inside="true" :show-text="false"></el-progress></div>
                 <div class="kpztdiv09"><span class="font04" v-html="ljqyje"></span></div>
               </li>
               <li class="clearfix">
                 <div class="kpztdiv07"><span class="font05">累计签约</span></div>
-                <div class="kpztdiv08"><el-progress :percentage="23" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv08"><el-progress :percentage="23" :text-inside="true" :show-text="false"></el-progress></div>
                 <div class="kpztdiv09"><span class="font04" v-html="ewyj"></span></div>
               </li>
               <li class="clearfix">
                 <div class="kpztdiv07"><span class="font05">去化率</span></div>
-                <div class="kpztdiv08"><el-progress :percentage="98" text-inside="true" show-text="false"></el-progress></div>
+                <div class="kpztdiv08"><el-progress :percentage="98" :text-inside="true" :show-text="false"></el-progress></div>
                 <div class="kpztdiv09"><span class="font04" v-html="qhl"></span><span class="font04">%</span></div>
               </li>
             </ul>
@@ -112,12 +112,12 @@
             <!--<ul>-->
               <!--<li class="clearfix">-->
                 <!--<div class="kpztdiv07"><span class="font05"><span v-html="jh_month"></span>月计划</span></div>-->
-                <!--<div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>-->
+                <!--<div class="kpztdiv08"><el-progress :percentage="100" :text-inside="true" :show-text="false"></el-progress></div>-->
                 <!--<div class="kpztdiv09"><span class="font04" v-html="yjh"></span></div>-->
               <!--</li>-->
               <!--<li class="clearfix">-->
                 <!--<div class="kpztdiv07"><span class="font05"><span v-html="jh_month"></span>月偏差率</span></div>-->
-                <!--<div class="kpztdiv08"><el-progress :percentage="100" text-inside="true" show-text="false"></el-progress></div>-->
+                <!--<div class="kpztdiv08"><el-progress :percentage="100" :text-inside="true" :show-text="false"></el-progress></div>-->
                 <!--<div class="kpztdiv09"><span class="font04" v-html="pcl"></span>%</div>-->
               <!--</li>-->
             <!--</ul>-->

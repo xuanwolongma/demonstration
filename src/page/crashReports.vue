@@ -8,15 +8,15 @@
 
     <el-tabs v-model="activeName"   @tab-click="handleClick">
       <el-tab-pane label="整体" name="first">
-        <el-table :data="tableData3" border style="width: 100%"  height="250">
-          <el-table-column  fixed  prop="date"  label="项目名称" width="100"> </el-table-column>
-          <el-table-column  prop="name"  label="合计" width="80"> </el-table-column>
-          <el-table-column prop="province"  label="境内(折算人民币)"  width="100"> </el-table-column>
-          <el-table-column prop="city" label="境外(折算人民币)"  width="100">  </el-table-column>
+        <el-table :data="tableData" border style="width: 100%"  height="250">
+          <el-table-column  fixed  prop="date"  label="项目名称" width="125"> </el-table-column>
+          <el-table-column  prop="name"  label="合计" width="70"> </el-table-column>
+          <el-table-column prop="province"  label="境内(折算人民币)"  width="90"> </el-table-column>
+          <el-table-column prop="city" label="境外(折算人民币)"  width="90">  </el-table-column>
         </el-table>
       </el-tab-pane>
       <el-tab-pane label="境内" name="second">
-        <el-table :data="tableData4" border style="width: 100%"  height="250">
+        <el-table :data="tableData2" border style="width: 100%"  height="250">
           <el-table-column  fixed  prop="date"  label="项目名称" width="150"> </el-table-column>
           <el-table-column  prop="name"  label="合计" width="80"> </el-table-column>
           <el-table-column prop="province"  label="人民币"  width="80"> </el-table-column>
@@ -27,7 +27,7 @@
         </el-table>
       </el-tab-pane>
       <el-tab-pane label="境外" name="third">
-        <el-table :data="tableData5" border style="width: 100%"  height="250">
+        <el-table :data="tableData3" border style="width: 100%"  height="250">
           <el-table-column  fixed  prop="date"  label="项目名称" width="150"> </el-table-column>
           <el-table-column  prop="name"  label="合计" width="80"> </el-table-column>
           <el-table-column prop="province"  label="人民币"  width="80"> </el-table-column>
@@ -40,9 +40,6 @@
         </el-table>
       </el-tab-pane>
     </el-tabs>
-
-
-
   </div>
 </template>
 
@@ -52,7 +49,7 @@
       return {
         activeName: 'first',
         date:'2017-08-03',
-        tableData3: [{date: '属于公司总金额',name: '1004.84',province: '850.20',city: '154.64'},
+        tableData: [{date: '属于公司总金额',name: '1004.84',province: '850.20',city: '154.64'},
           {date: '1.房产板块',name: '786.78',province: '741.79',city: '44.99'},
           {date: '2.建筑装修板块',name: '25.22',province: '25.22',city: '0.00'},
           {date: '3.物业管理板块',name: '18.87',province: '18.87',city: '0.00'},
@@ -68,7 +65,7 @@
           {date: '7.合资公司',name: '91.07',province: '91.07',city: '0.00'},
           {date: '8.境外人民币',name: '9.35',province: '9.35',city: '0.00'},
           {date: '剩余可动用资金',name: '180.60',province: '83.20',city: '97.40'}],
-        tableData4: [{date: '属于公司总金额',name: '850.20',province: '846.26',city: '0.58',address:'0.04',zip:'0.00',mb:'0.00'},
+        tableData2: [{date: '属于公司总金额',name: '850.20',province: '846.26',city: '0.58',address:'0.04',zip:'0.00',mb:'0.00'},
           {date: '1.房产板块',name: '741.79',province: '738.20',city: '0.53',address:'0.04',zip:'0.00',mb:'0.00'},
           {date: '2.建筑装修板块',name: '25.22',province: '24.91',city: '0.05',address:'0.00',zip:'0.00',mb:'0.00'},
           {date: '3.物业管理板块',name: '18.87',province: '18.87',city: '0.00',address:'0.00',zip:'0.00',mb:'0.00'},
@@ -85,7 +82,7 @@
           {date: '8.境外人民币',name: '9.35',province: '9.35',city: '0.00',address:'0.00',zip:'0.00',mb:'0.00'},
           {date: '9.外币(按政策要求外币)',name: '3.94',province: '0.00',city: '0.58',address:'0.00',zip:'0.00',mb:'0.00'},
           {date: '剩余可动用资金',name: '180.60',province: '83.20',city: '97.40',address:'0.00',zip:'0.00',mb:'0.00'}],
-        tableData5: [{date: '属于公司总金额',name: '154.64',province: '0.00',city: '15.81',address:'3.68',zip:'0.76',mb:'25.53',jb:'0.01',xb:'0.08'},
+        tableData3: [{date: '属于公司总金额',name: '154.64',province: '0.00',city: '15.81',address:'3.68',zip:'0.76',mb:'25.53',jb:'0.01',xb:'0.08'},
           {date: '1.房产板块',name: '44.99',province: '0.00',city: '0.02',address:'0.04',zip:'0.76',mb:'25.53',jb:'0.00',xb:'0.08'},
           {date: '2.建筑装修板块',name: '0.00',province: '0.00',city: '0.00',address:'0.00',zip:'0.00',mb:'0.00',jb:'0.00',xb:'0.00'},
           {date: '3.物业管理板块',name: '0.00',province: '0.00',city: '0.00',address:'0.00',zip:'0.00',mb:'0.00',jb:'0.00',xb:'0.00'},
@@ -119,7 +116,8 @@
     width: 100%;
     height: 100%;
     color:white;
-    margin-top: 45px;
+    margin-top: 0px;
+    position: fixed;
     .top_title{
       height: 50px;
       line-height: 50px;
@@ -152,7 +150,7 @@
       font-size: 16px;
       margin-left: 5%;
     }
-     .date {
+    .date {
       float: right;
       height: 30px;
       text-align: center;
@@ -184,12 +182,14 @@
       border: 1px solid transparent;
       border-radius: 4px;
     }
-
+    .el-table__row .el-table_1_column_1{
+      color: #FD9526;
+    }
     .el-tabs__nav-scroll {
       background: #023C64;
     }
     .el-table {
-      height: 500px !important;
+      height: 450px !important;
       font-size: 12px  !important;
     }
     .el-table .cell,
@@ -204,26 +204,38 @@
     .el-table--enable-row-transition .el-table__body .el-table_1_column_12,
     .el-table--enable-row-transition .el-table__body .el-table_1_column_1 {
       text-align: left;
-      background-color: #ccc;
+      padding-left: 5px;
     }
     .el-table--enable-row-transition .el-table__body .el-table_1_column_6,
     .el-table--enable-row-transition .el-table__body .el-table_1_column_13,
     .el-table--enable-row-transition .el-table__body .el-table_1_column_2 {
       font-weight: 700;
     }
+    .el-table__body tr.hover-row>td {
+      background-color: #2d5c7c;
+    }
     .el-table tr th {
       text-align: center;
-      background-color: #47c3ff;
+      background-color: #023c64;
+      color: #fff;
     }
+    .el-table tr th .cell {
+      color: #fff;
+    }
+
     .el-table__footer-wrapper thead div,
     .el-table__header-wrapper thead div {
-      background-color: #47c3ff;
+      background-color: #023c64;
       color: white;
     }
     .el-table__fixed-header-wrapper thead div {
-      background-color: #47c3ff;
-      color: white;
+      background-color: #023c64;
     }
 
+    .el-table tr,.el-table th>.cell,.el-table__footer-wrapper tbody td{
+      background: #023c64;
+      color: #FD9526;
+    }
   }
-</style
+
+</style>

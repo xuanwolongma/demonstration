@@ -9,7 +9,7 @@
 
     <div class="jycash">
       <span>经营性现金流</span>
-      <span>单位：亿元</span>
+      <span class="cl1">单位：亿元</span>
     </div>
 
     <table class="Atabcash Acash">
@@ -331,7 +331,7 @@
                   show: true,
                 },
               },
-              symbolSize: 2|10,
+              symbolSize: 5,
               data:b
             }
           ]
@@ -405,14 +405,15 @@
   }
 </script>
 
-<style  lang="scss">
+<style  scoped  lang="scss">
   .situation{
     background: #01304a;
     border-top: #1d87ff solid 1px;
     width: 100%;
     height: 100%;
     color:white;
-    margin-top: 45px;
+    margin-top: 1px;
+    position: fixed;
     overflow: hidden;
     .top_title{
       height: 50px;
@@ -436,25 +437,22 @@
       color: gray;
     }
      .jycash{
-      width: 100%;
-      height: 40px;
-      line-height: 40px;
-      font-size: 16px;
-      background-image: url("../assets/common-bluebox_b.png");
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      margin-top: 5px;
+       position: relative;
+       width: 100%;
+       height: 40px;
+       background: #497FAB;
+       border-radius: 5px 5px 0 0;
+       line-height: 40px;
+       padding: 0 9% 0 3%;
 
     }
      .jycash span:nth-child(1){
       float: left;
       color: #fff;
-      margin-left: 21px;
+      margin-left: 10px;
     }
      .jycash span:nth-child(2){
       float: right;
-      color: #666;
-      margin-right: 15px;
     }
      .tabcash{
       width: 100%;
@@ -462,6 +460,7 @@
       text-align: center;
       border: 1px solid #ccc;
       border-collapse: collapse;
+       font-size: 13px;
     }
      .tabcash .tab_had{
       background-color: #D5FFFB;
@@ -481,6 +480,7 @@
       margin-top: 10px;
       border: 1px solid #ccc;
       border-collapse: collapse;
+      font-size: 14px;
     }
      .Acash td{
       height: 30px;
@@ -503,5 +503,16 @@
       overflow-y: auto;
       margin-bottom: 60px;
     }
+
+      .cl1{
+        color: #FD9526;
+      }
+      .cl2{
+        color: #0199E5;
+      }
+
+      .cl3{
+        color: #fff;
+      }
   }
 </style>

@@ -25,59 +25,53 @@
     <div class="carousel-inner">
       <div id='item1' class="item active">
         <div class="cos_echarts_scroll">
-          <div class="cos_title_left">
-            <div class="qp">
-              <span>动态单方:</span>
-              <img width="30px" src="../assets/cb001.png"/>
-              <!-- <span>动态单方</span> -->
-            </div>
-            <div class="qp">
-              <span>目标单方:</span>
-              <img width="30px" src="../assets/cb002.png"/>
-              <!-- <span>毛利率</span> -->
-            </div>
-
-          </div>
           <div class="cos_title_right">
             <span>数据截止日期：7月</span>
           </div>
           <div class="cos_echarts" id="cos_echarts1"></div>
         </div>
-        <div class="xaxis"></div>
       </div>
     </div>
-    <div class="cos_list ">
-      <div class="cos_list_content" v-for="qy in datas" >
-        <div class="cos_lc_one sheng" v-bind="$index+1">
-        </div>
-        <div class="cos_lc_two">
-          <div class="bg" :style="{width:qy.bgbfb+'%'}"></div>
+    <div class="cos_list">
+      <div class="cos_list_content" v-for="qy in arys" @click="gochild(qy.key4)">
+        <div class="cos_lc_one sheng"  >{{qy.key9}}</div>
+        <div class="cos_lc_two" >
+          <div class="bg" :style="{width:qy.key1+'%'}"></div>
+          <div class="warning" @click="toyj(qy)" v-if="qy.yjdiv">
+            <div class="num1" v-if="imgflag">
+              <span >{{qy.key2}}</span>
+            </div>
+            <div v-if="!imgflag">
+              <div style="position: absolute;right: 15PX;top: 13px;font-size: 12px;width:20px;text-align:center;color: #333">
+                <span  >{{qy.key2}}</span>
+              </div>
+              <div style="background-color:#333;width:25px;height:1px;position: absolute;right: 12PX;top: 30px;"></div>
+              <div style="position: absolute;right: 5PX;top: 28px;font-size: 12px;width:40px;text-align:center;color: #333">
+                <span  >{{qy.key3}}</span>
+              </div>
+            </div>
+            <img src="../assets/warning.png"/>
+          </div>
           <div class="cos_list_title">
-            <span class="cos_lc_two_span1" v-bind="qy.projectname!=undefined?qy.projectname:qy.areaname!=undefined?qy.areaname:qy.cplx"></span>
-            <span class="cos_lc_two_span2"><span v-if="select=='type1'" v-bind="qy.dtksdf"></span><span v-if="select!='type1'" v-bind="qy.dtjzdf"></span>元</span>
+            <span class="cos_lc_two_span1" >{{qy.key4}}</span>
+            <span class="cos_lc_two_span2" >{{qy.key5}}</span>
           </div>
-          <div class="cos_list_data" v-if="!xsj">
-            <!--<div class="div1" v-if="select=='type1'"><span>目标可售单方</span></div>-->
-            <!--<div class="div2" v-if="select=='type1'"><span><span v-bind="qy.mbksdf"></span></span></div>-->
-            <!--<div class="div1" v-if="select=='type1'"><span>目标净利率</span></div>-->
-            <!--<div class="div2" v-if="select=='type1'"><span><span v-bind="qy.mbjll"></span>%</span></div>-->
-            <!--<div class="div1" v-if="select=='type2'"><span>目标建造单方</span></div>-->
-            <!--<div class="div2" v-if="select=='type2'"><span><span v-bind="qy.mbjzdf"></span></span></div>-->
-            <!--<div class="div1" v-if="select=='type3'" style="width:130px;"><span>目标主体结构+粗装</span></div>-->
-            <!--<div class="div2" v-if="select=='type3'"><span><span v-bind="qy.mbjzdf"></span></span></div>-->
-            <!--<div class="div1" v-if="select=='type4'"><span>目标主体建安</span></div>-->
-            <!--<div class="div2" v-if="select=='type4'"><span><span v-bind="qy.mbjzdf"></span></span></div>-->
+          <div class="cos_list_data">
+            <span>目标成本</span>
+            <span style="padding-left:2px;" >{{qy.key6}}</span>
+            <span style="padding-left:2px;">动态成本</span>
+            <span style="padding-left:2px;" >{{qy.key7}}</span>
           </div>
-          <div class="cos_list_data" v-if="!xsj">
-            <div class="div1" v-if="select=='type1'"><span>利润率偏差</span></div>
-            <div class="div2" v-if="select=='type1'"><span><span v-bind="qy.jllpc"></span>%</span></div>
-            <div v-class="{true: 'mbjlr', false: 'div1'}[select=='type3']"><span v-if="select!='type1'">目标净利率</span></div>
-            <div class="div2" v-if="select!='type1'"><span><span v-bind="qy.mbjll"></span>%</span></div>
-            <div  v-class="{true: 'dtjlr', false: 'div1'}[select=='type3']"><span>动态净利率</span></div>
-            <div class="div2"><span><span v-bind="qy.dtjll"></span>%</span></div>
+          <div class="cos_list_data">
+            <span>成本追加率</span>
+            <span style="padding-left:2px;" >{{qy.key8}}</span>
+            <span style="padding-left:2px;" v-if="myf">
+						<span style="padding-left:2px;">追加项目数</span>
+						<span style="padding-left:2px;" >{{qy.key10}}</span>
+					</span>
           </div>
         </div>
-        <div v-show="numjzdf!=2" class="cos_lc_three">
+        <div v-show="" class="cos_lc_three">
           <img src="../assets/right.png"/>
         </div>
       </div>
@@ -97,161 +91,125 @@
         activeName: "first",
         myf: true,
         dialogmains: false,
-        datas:[{"cplx":"双拼-豪装","ds_ts":"2017-07-29 05:25:59.0","dtjll":".1308697","dtjzdf":"6677.1821","dtksdf":"11011.4366","jllpc":".0528","jzdflx":"JZhDF","mbjll":".0780667","mbjzdf":"6747.1157","mbksdf":"10797.3466","pm":"1","pzyf":"2017-07"},
-          {"cplx":"公寓-精装","ds_ts":"2017-07-29 05:25:59.0","dtjll":".0448344","dtjzdf":"4671.1011","dtksdf":"12892.8209","jllpc":"-.03904","jzdflx":"JZhDF","mbjll":".0838768","mbjzdf":"5429.0742","mbksdf":"14416.0737","pm":"2","pzyf":"2017-07"},
-          {"cplx":"双拼-精装","ds_ts":"2017-07-29 05:25:59.0","dtjll":".2872605","dtjzdf":"4438.9802","dtksdf":"13232.0646","jllpc":".06882","jzdflx":"JZhDF","mbjll":".2184453","mbjzdf":"4951.5671","mbksdf":"13286.4353","pm":"3","pzyf":"2017-07"},
-          {"cplx":"独栋-毛坯","ds_ts":"2017-07-29 05:25:59.0","dtjll":".1449281","dtjzdf":"4404.4204","dtksdf":"10272.3702","jllpc":".13974","jzdflx":"JZhDF","mbjll":".0051867","mbjzdf":"4602.6161","mbksdf":"10675.5796","pm":"4","pzyf":"2017-07"},
-          {"cplx":"联排-毛坯","ds_ts":"2017-07-29 05:25:59.0","dtjll":".1483937","dtjzdf":"3786.2913","dtksdf":"8849.9672","jllpc":".09245","jzdflx":"JZhDF","mbjll":".055948","mbjzdf":"3991.8179","mbksdf":"8239.4707","pm":"5","pzyf":"2017-07"},
-          {"cplx":"双拼-毛坯","ds_ts":"2017-07-29 05:25:59.0","dtjll":".2570527","dtjzdf":"3410.3937","dtksdf":"10831.1744","jllpc":".09488","jzdflx":"JZhDF","mbjll":".1621769","mbjzdf":"3641.0201","mbksdf":"10665.8732","pm":"6","pzyf":"2017-07"},
-          {"cplx":"多层-精装","ds_ts":"2017-07-29 05:25:59.0","dtjll":".2587318","dtjzdf":"3287.6093","dtksdf":"10487.5683","jllpc":".15718","jzdflx":"JZhDF","mbjll":".1015566","mbjzdf":"3528.6884","mbksdf":"9083.5007","pm":"7","pzyf":"2017-07"},
-          {"cplx":"商业中心-毛坯","ds_ts":"2017-07-29 05:25:59.0","dtjll":".1746003","dtjzdf":"3261.3716","dtksdf":"9295.0636","jllpc":".00318","jzdflx":"JZhDF","mbjll":".1714171","mbjzdf":"3318.1634","mbksdf":"9330.8557","pm":"8","pzyf":"2017-07"},
-          {"cplx":"人防地下室（不含车位）-毛坯","ds_ts":"2017-07-29 05:25:59.0","dtjzdf":"3170.7478","dtksdf":"0","jzdflx":"JZhDF","mbjzdf":"2831.3686","mbksdf":"0","pm":"9","pzyf":"2017-07"},
-          {"cplx":"附属商业（含底层商业）-毛坯","ds_ts":"2017-07-29 05:25:59.0","dtjll":".225374","dtjzdf":"3083.7854","dtksdf":"9092.6319","jllpc":".02074","jzdflx":"JZhDF","mbjll":".2046365","mbjzdf":"3246.8885","mbksdf":"9026.8889","pm":"10","pzyf":"2017-07"},
-          {"cplx":"中高层-精装","ds_ts":"2017-07-29 05:25:59.0","dtjll":".1439205","dtjzdf":"2984.3775","dtksdf":"6335.2278","jllpc":".01018","jzdflx":"JZhDF","mbjll":".1337394","mbjzdf":"3011.047","mbksdf":"6339.3708","pm":"11","pzyf":"2017-07"},
-          {"cplx":"小高层-精装","ds_ts":"2017-07-29 05:25:59.0","dtjll":".1259117","dtjzdf":"2955.9756","dtksdf":"5014.7879","jllpc":".04008","jzdflx":"JZhDF","mbjll":".0858277","mbjzdf":"3013.8914","mbksdf":"5025.3948","pm":"12","pzyf":"2017-07"},
-          {"cplx":"高层-精装","ds_ts":"2017-07-29 05:25:59.0","dtjll":".1787643","dtjzdf":"2954.2052","dtksdf":"6600.95","jllpc":".05946","jzdflx":"JZhDF","mbjll":".1193088","mbjzdf":"3075.3314","mbksdf":"6425.486","pm":"13","pzyf":"2017-07"},
-          {"cplx":"人防地下车位-毛坯","ds_ts":"2017-07-29 05:25:59.0","dtjzdf":"2900.1044","dtksdf":"0","jzdflx":"JZhDF","mbjzdf":"3004.8556","mbksdf":"0","pm":"14","pzyf":"2017-07"},
-          {"cplx":"商业街-毛坯","ds_ts":"2017-07-29 05:25:59.0","dtjll":".1423384","dtjzdf":"2883.7059","dtksdf":"8556.8029","jllpc":"-.0211","jzdflx":"JZhDF","mbjll":".1634347","mbjzdf":"3008.1056","mbksdf":"8784.7195","pm":"15","pzyf":"2017-07"}],
+        imgflag:false,
+        arys:[{key1:"100",key2:"2",key3:"2",key4:"深圳",key5:"-0.27%",key6:"45.78亿",key7:"45.66亿" ,key8:"0.82%",key9:"1",key10:"1",yjdiv:true},
+          {key1:"100",key2:"2",key3:"2",key4:"上海",key5:"-0.32%",key6:"9.79亿",key7:"7.76亿" ,key8:"--",key9:"2",key10:"0",yjdiv:true},
+          {key1:"90",key2:"3",key3:"3",key4:"鲁东",key5:"-0.33%",key6:"36.04亿",key7:"35.92亿" ,key8:"3.70%",key9:"3",key10:"1",yjdiv:true},
+          {key1:"99",key2:"11",key3:"11",key4:"河北",key5:"-0.41%",key6:"138.52亿",key7:"137.95亿" ,key8:"1.16%",key9:"4",key10:"2",yjdiv:true},
+          {key1:"97",key2:"4",key3:"4",key4:"武汉",key5:"-0.66%",key6:"60.14亿",key7:"59.74亿" ,key8:"--",key9:"5",key10:"0",yjdiv:true},
+          {key1:"86",key2:"28",key3:"28",key4:"河南",key5:"-0.72%",key6:"402.11亿",key7:"399.20亿" ,key8:"--",key9:"6",key10:"0",yjdiv:true},],
         op1: [6940, 6465, 17581, 6545, 5491, 5204, 5861, 7369, 8471, 8493],
         op2: [6940, 6465, 17581, 6545, 5491, 5204, 5861, 7369, 8471, 8493],
-        namejzdfArr: ["高层-毛坯", "高层-精装",  "高层-豪装",  "中高层-毛坯", "中高层-精装",  "小高层-毛坯",  "小高层-精装", "多层-毛坯",  "多层-精装", "多层-豪装"],
+        namejzdfArr: ["高层--毛坯", "高层--精装",  "高层--豪装",  "中高层-毛坯", "中高层-精装",  "小高层-毛坯",  "小高层-精装", "多层--毛坯",  "多层--精装", "多层--豪装"],
       }
     },
     mounted(){
         this.setoption(this.op1,this.op2)
       },
     methods:{
-          //根据大小不同柱状图的颜色不同
-          getData(a,b){
-        var echartdata = [];
-        for(var i = 0;i< a.length;i++){
-          if(a[i] < b[i]){
-            var obj = {
-              value:a[i],
-              itemStyle:{
-                normal:{
-                  color:'green',
-                },
-                emphasis :{
-                  color:'#FF9A11',
-                }
-              }
-            }
-            echartdata.push(obj)
-          }else {
-            obj = {
-              value:a[i],
-              itemStyle:{
-                normal:{
-                  color:'red',
-                },
-                emphasis :{
-                  color:'#FF9A11',
-                }
-              }
-            }
-            echartdata.push(obj)
-          }
-        }
-        return echartdata
-      },
           setoption(a,b){
-            var myChart1 = echarts.init(document.getElementById('cos_echarts1'));
-            var option1 = {
-              tooltip : {
-        //    				showContent : false,
-                trigger: 'axis',
-                axisPointer : {
-                  type:'none',
-                  lineStyle : {
-                    color : 'white'
-                  }
-                },
-                formatter: function (param) {
-                  // console.log(b[i]);
-                  for (var i = 0, l = option1.xAxis[0].data.length; i < l; i++) {
-                    // console.log(b[i]);
-                    if (option1.xAxis[0].data[i] == param[0].name){
-//                      this.setXaxisName1(param[0]);
-                      console.log(param);
-                      var ary = $('.cos_lc_one');
-                      for(var a = 0;a<this.namejzdfArr.length;a++){
-                        if(ary[a].innerHTML == param.dataIndex+1){
-                          ary[a].scrollIntoView();
-                        }
-                      }
-                      $(".xaxis").css('display','block');
-                      $(".xaxis").html(param.name);
-                      $(".xaxis").css('margin-top','-20px');
-                      $(".xaxis").css('height','20px');
-                      var width = $(window).width();
-                      var w = (param.name.length)*16;
-                      var i = (width*0.80)/this.namejzdfArr.length;
-                      var n = this.namejzdfArr.length-param.dataIndex;
-                      var left = width*0.15 + i/2 + (param.dataIndex)*i - w/2 - (param.dataIndex*0.9)*(w/45)^(param.dataIndex);
-                      $(".xaxis").css('width',w);
-                      $(".xaxis").css('margin-left',left);
-                      return param[0].name + '<br/>' + '目标单方：' + param[1].value + '<br/>' + '动态单方：' + param[0].value;
+            var myChart = echarts.init(document.getElementById('cos_echarts1'));
+            var option = {
+                tooltip : {
+                  trigger: 'axis',
+                  axisPointer: {
+                    type: 'none',
+                    lineStyle: {
+                      color: 'white'
                     }
-                  }
-
-                }
-              },
-              grid: {
-                x: 50,
-                y: 40,
-                x2: 30,
-                y2: 40,
-              },
-              xAxis : [
-                {
-                  type : 'category',
-                  data : this.namejzdfArr,
-                  axisLine:{show:false,},
-                  splitLine:{show:false},
-                  axisTick:{show:false},
-                  axisLabel:{show:false,textStyle:{color:'#fff'} }
-                }
-              ],
-              yAxis : [{
-                  type : 'value',
-                  axisLabel : {textStyle:{color:'#fff'}},
-                  axisLine:{ show:false,},
-                  splitLine:{show:true,lineStyle:{color:'#6699ff'}},
-                  axisTick:{show:false},
-                  min:0
                   },
-                {
-                  type : 'value',
-                  axisLabel : {show:false,textStyle:{color:'#fff'}},
-                  axisLine:{show:false},
-                  splitLine:{show:false, lineStyle:{color:'#6699ff'}},
-                  axisTick:{show:false},
-                  min:2
-                }
-              ],
-              series : [
-                {
-                  name:'动态建造单方',
-                  type:'bar',
-                  clickable:true,
-                  itemStyle:{ normal:{ color:'#fff',},emphasis :{color:'#FF9A11',}},
-                  barWidth:12,
-                  data:this.getData(a,b)
+                  formatter: function (param) {
+                    // console.log(b[i]);
+                      console.log(param);
+                      return param[0].name + '<br/>' + '目标单方：' + param[1].value + '<br/>' + '动态单方：' + param[0].value;
+                  },
                 },
-                {
-                  name:'目标建造单方',
-                  type:'scatter',
-                  clickable:true,
-                  symbol:'circle',
-                  symbolSize:10,
-                  itemStyle:{ normal:{color:'#008ADC',lineStyle:{ color:'#fff' } }},
-                  data:b
-                }
-              ]
+                grid: {
+                  x: 60,
+                  y: 40,
+                  x2: 20,
+                  y2: 50,
+                },
+                xAxis: [
+                  {
+                    type: 'category',
+                    axisLine: {show: false,},
+                    splitLine: {show: false},
+                    axisTick: {show: false},
+                    axisLabel: {show: true,interval:0,  rotate: 300,textStyle: {color: '#fff'}},
+                    nameRotate:"90 ",
+                    data: this.namejzdfArr
+                  }
+                ],
+                yAxis: [
+                  {
+                    type: 'value',
+                    axisLabel: {textStyle: {color: '#fff'}},
+                    axisLine: {show: false,},
+                    splitLine: {show: true, lineStyle: {color: '#6699ff'}},
+                    axisTick: {show: false},
+                    splitNumber:3,
+                    min: 0
+                  },
+                ],
+                series: [
+                  {
+                    name: '动态建造单方',
+                    type: 'bar',
+                    clickable: true,
+                    itemStyle: {normal: {color: '#FF9A11',}, emphasis: {color: '#55C6FE',}},
+                    barWidth: 12,
+                    data: a
+                  },
+                  {
+                    name: '目标建造单方',
+                    type: 'scatter',
+                    clickable: true,
+                    symbol: 'circle',
+                    symbolSize: 10,
+                    itemStyle: {normal: {color: '#008ADC', lineStyle: {color: '#fff'}}},
+                    data: b
+                  }
+                ]
             };
-            myChart1.setOption(option1);
-          },
+            myChart.setOption(option);
+            myChart.setOption( this.newline(option,2,"xAxis"));
+
+          },newline(option, number, axis){
+              /**
+               * 控制图表的横纵的文本一行显示的文字数
+               */
+              option[axis][0]['axisLabel']={
+                interval: 0,
+                textStyle : {
+                  fontSize : '10',
+                },
+                rotate:0,
+                formatter: function(params){
+                  var newParamsName = "";
+                  var paramsNameNumber = params.length;
+                  var provideNumber = number;
+                  var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                  if (paramsNameNumber > provideNumber) {
+                    for (var p = 0; p < rowNumber; p++) {
+                      var tempStr = "";
+                      var start = p * provideNumber;
+                      var end = start + provideNumber;
+                      if (p == rowNumber - 1) {
+                        tempStr = params.substring(start, paramsNameNumber);
+                      } else {
+                        tempStr = params.substring(start, end) + "\n";
+                      }
+                      newParamsName += tempStr;
+                    }
+                  } else {
+                    newParamsName = params;
+                  }
+                  return newParamsName
+                }
+              }
+              return option;
+            }
     }
   }
 </script>
@@ -262,44 +220,49 @@
     border-top: #1d87ff solid 1px;
     width: 100%;
     height: 100%;
+    color: white;
     margin-top: 45px;
-    color:white;
+    font-size: 14px;
+    .title {
+      font-size: 20px;
+      margin-left: 30px;
+    }
     .top_title {
       height: 50px;
       line-height: 50px;
-      text-align: center;
+      text-align: left;
       color: #fff;
+      padding-left: 20px;
+      background-color: #28465E;
+      border-bottom: 1px solid #ddd;
     }
     .ymsm{
-         float: right;
-         margin-right: 10px;
-         z-index: 99;
-       }
+      float: right;
+      margin-right: 10px;
+      z-index: 99;
+    }
     .ymsm img{
       height: 14px;
       padding-right: 4px;
     }
     .cos_title_left {
       float: left;
-      font-size: 16px;
+      font-size: 14px;
       padding-left: 10px;
       margin-top: 10px;
     }
     .cos_title_left_span2 {
-      font-size: 20px;
+      font-size: 18px;
     }
     .cos_title_right {
       float: right;
       padding-right: 10px;
-      margin-top: 31px;
+      padding-top: 10px;
     }
-
     .charts{
       height: 200px;
       clear: both;
     }
-
-
     .cos_echarts>div:nth-child(1){
       top:-15px !important;
       margin-left: 2%;
@@ -327,12 +290,11 @@
       border-top-left-radius: 5px;
     }
     .sheng{
-      background: #FFDACB;
+      background-color: #558EB9;
     }
     .qian{
       background: #FFEBCD;
     }
-
     .cos_lc_two{
       float: left;
       border-bottom-right-radius: 5px;
@@ -347,7 +309,7 @@
       z-index: -1;
       height: 75px;
       width: 100%;
-      background: #76b2d1;
+      background: #a4b4bc;
       border-bottom-right-radius: 5px;
       border-top-right-radius: 5px;
     }
@@ -359,7 +321,6 @@
       font-size: 18px;
       color: #008ADC;
     }
-
     .cos_lc_three{
       float: right;
       padding-top: 20px;
@@ -380,7 +341,6 @@
       right: -20PX;
       top: 15px;
     }
-
     .warning>img{
       height: 50px;
       width: 50px;
@@ -404,12 +364,10 @@
       -moz-transform: rotate(90deg);
       filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
     }
-
     .rightimg{
       height:10px;
       margin-bottom:8px;
     }
-
 
     .dialogmain {
       width: 80%;
@@ -462,16 +420,6 @@
     .carousel-inner>.active {
       left: 0;
     }
-    .cos_title_left {
-      float: left;
-      font-size: 14px;
-      padding-left: 10px;
-    }
-    .cos_title_right {
-      float: right;
-      padding-right: 10px;
-      padding-top: 24px;
-    }
     .cos_echarts {
       height: 200px;
       clear: both;
@@ -503,12 +451,9 @@
       font-size: 18px;
     }
     .font5 {
-      font-size: 20px;
+      font-size: 18px;
     }
 
   }
-  .title {
-    font-size: 20px;
-    margin-left: 30px;
-  }
+
 </style>
