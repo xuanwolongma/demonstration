@@ -57,7 +57,7 @@
             </div>
             <div class="divht">
               <div style="float: left;">回款率排名</div>
-              <div class="spanmargin pull-right" v-bind="region.wclpmD" v-show="region.ndmbD/1!=0"></div>
+              <div class="spanmargin pull-right" v-html="region.wclpmD" v-show="region.ndmbD/1!=0"></div>
               <div class="spanmargin pull-right" v-show="region.ndmbD/1==0">—</div>
             </div>
           </div>
@@ -128,12 +128,11 @@
 </template>
 
 <script>
-import modelselect  from  "../components/modelselect.vue"
-
+//import modelselect  from  "../components/modelselect.vue"
     export default{
-      components:{
-        modelselect
-      },
+//      components:{
+//        modelselect
+//      },
         data(){
             return {
               qjt:true,
