@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import humanum from '../page/humanum'
+import login from '../page/login'  // 登录
 import deviation from '../page/deviation' //成本中心 成本偏差-
 import costunits from '../page/costunits' //成本中心 建筑单位
 import cost from '../page/cost'  //成本中心 关键指标
@@ -25,6 +26,17 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component: login,
+      children:[
+        {
+          path:"/",
+          component:login
+        },
+      ]
+    },
+    {
+      path: '/annualindicator',
       name: 'mainContainer',
       component: mainContainer,
       redirect: '/annualindicator',
